@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input{
+  padding: 15px 19px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  outline: none;
+  width: 300px;
+  color: white;
+  font-family: Montserrat,Arial,sans-serif;
+}
+
+input::placeholder {
+  color: white;
+}
+
+.input-group{
+  margin-bottom: 10px;
+}
+
+.btn{
+  padding: 15px 48px;
+  border-radius: 30px;
+  border: none;
+  width: 300px;
+  margin-top: 5vh;
+  background: #f96332;
+  color: white;
+  font-family: Montserrat,Arial,sans-serif;
+  outline: none;
+}
+
+.form-error{
+  color: #f96332;
+  font-family: Montserrat,Arial,sans-serif;
+  margin-bottom: 20px;
+}
+
+
+/* ユーザーフォーム */
+.register-container{
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/images/register-background.jpg");
+  background-size: cover;
+  color: white;
+}
+
+.register-form{
+  padding-top: 20vh;
+}
