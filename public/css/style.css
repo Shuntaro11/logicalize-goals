@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  text-align: center;
+  font-family: Montserrat,Arial,sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+input{
+  padding: 15px 19px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  outline: none;
+  width: 300px;
+  color: white;
+}
+
+input::placeholder {
+  color: white;
+}
+
+.input-group{
+  margin-bottom: 10px;
+}
+
+.btn{
+  padding: 15px 48px;
+  border-radius: 30px;
+  border: none;
+  width: 300px;
+  margin-top: 5vh;
+  background: #f96332;
+  color: white;
+  outline: none;
+}
+
+.form-error{
+  color: #f96332;
+  margin-bottom: 20px;
+}
+
+.main-text{
+  font-size: 30px;
+  padding-top: 10vh;
+}
+
+.main-text-sub{
+  font-size: 18px;
+  color: rgba(245, 245, 245, .8);
+}
+
+.background-image{
+  position: absolute;
+  z-index: -1;
+  background-image: url("/images/register-background.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+
+  .main-text{
+    font-size: 18px;
+  }
+
+  .main-text-sub{
+    font-size: 12px;
+  }
+
+  input{
+    width: 250px;
+  }
+
+  .btn{
+    width: 250px;
+  }
+
+}
+
+
+/* ユーザーフォーム */
+.register-container{
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  background: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6));
+}
+
+.register-form{
+  padding-top: 20vh;
+}
+
+
+
+/* ヘッダー */
+
+.header{
+  width: 100vw;
+  position: fixed;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 100px;
+}
+
+.nav-link{
+  margin-right: 10px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 10px;
+  border-radius: 3px;
+  margin-top: 30px;
+  transition: .5s ;
+}
+
+.nav-link:hover{
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 640px) {
+
+  .header{
+    padding-right: 5px;
+  }
+
+  .nav-link{
+    margin-right: 5px;
+    margin-top: 15px;
+  }
+
+}
+
+/* トップページ */
+.top-container{
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  background: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6));
+}
