@@ -2,7 +2,7 @@
 
     @auth
 
-        <div>{{Auth::user()->name}}</div>
+        <div class="nav-link">{{Auth::user()->name}}</div>
         <a class="nav-link" href="{{ route('logout') }}"
             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -21,6 +21,5 @@
         @endif
         
     @endauth
-    
-    
+
 </div>
