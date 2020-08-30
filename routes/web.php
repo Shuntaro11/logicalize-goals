@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('top');
-});
+Route::get('/', 'GoalController@index')->name('top');
 
 Auth::routes();
