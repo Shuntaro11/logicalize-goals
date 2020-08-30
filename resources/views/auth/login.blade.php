@@ -4,6 +4,8 @@
 @include("header")
 
 <div class="register-container">
+    
+    <div class="background-image"></div>
 
     <form class="register-form" method="POST" action="{{ route('login') }}">
         @csrf
