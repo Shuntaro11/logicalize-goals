@@ -43,6 +43,10 @@ input::placeholder {
   outline: none;
 }
 
+.btn:hover{
+  background: #ff784b;
+}
+
 .form-error{
   color: #f96332;
   margin-bottom: 20px;
