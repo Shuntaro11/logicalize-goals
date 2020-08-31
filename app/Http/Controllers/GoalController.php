@@ -19,8 +19,4 @@ class GoalController extends Controller
         return view('goal.create');
     }
 
-    public function createsecond()
-    {
-        return view('goal.createsecond');
-    }
 }

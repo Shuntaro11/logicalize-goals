@@ -7,6 +7,7 @@
 body{
   text-align: center;
   font-family: Montserrat,Arial,sans-serif;
+  color: white;
 }
 
 h1{
@@ -23,14 +24,17 @@ h3{
 
 h4{
   font-size: 1em;
+  font-weight: 300;
 }
 
 h5{
   font-size: 0.75em;
+  font-weight: 300;
 }
 
 h6{
   font-size: 0.625em;
+  font-weight: 300;
 }
 
 a{
@@ -66,6 +70,7 @@ input::placeholder {
   color: white;
   outline: none;
   font-family: Montserrat,Arial,sans-serif;
+  cursor: pointer;
 }
 
 .btn:hover{
@@ -83,8 +88,8 @@ input::placeholder {
 }
 
 .main-text-sub{
-  font-size: 18px;
-  color: rgba(245, 245, 245, .8);
+  font-size: 15px;
+  font-weight: 300;
 }
 
 .background-image{
@@ -142,6 +147,7 @@ input::placeholder {
   display: flex;
   justify-content: flex-end;
   padding-right: 100px;
+  z-index: 1000;
 }
 
 .nav-link{
@@ -214,18 +220,110 @@ input::placeholder {
 
 /* goal create画面 */
 
-.goal-form{
+.number-vav-bar{
+  position: absolute;
+  top: 13vh;
+  left: 10vw;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.mark-number{
+  width: 30px;
+  line-height: 30px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #f96332;
+}
+
+.mark-number__first{
+  background: white;
+  box-shadow: 0 5px 14px 0 rgba(0,0,0,.1);
+}
+
+.goal-form-each{
+  position: absolute;
+  background: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6));
+  width: 100vw;
+  min-height: 100vh;
   padding-top: 25vh;
+  display: none;
+}
+
+.goal-form-each__first{
+  display: block;
+}
+
+.goal-form-each__why{
+  padding-top: 15vh;
+}
+
+.goal-form-each__how-much{
+  padding-top: 15vh;
 }
 
 .input-what{
   margin-top: 30px;
   width: 80vw;
 }
+.input-when{
+  margin-top: 30px;
+  width: 30vw;
+}
+
+.input-how-much{
+  margin-top: 30px;
+  width: 20vw;
+  text-align: center;
+}
+
+.small-btn{
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 2vh;
+  background: white;
+  color: #f96332;
+  outline: none;
+  font-family: Montserrat,Arial,sans-serif;
+  box-shadow: 0 5px 14px 0 rgba(0,0,0,.1);
+  cursor: pointer;
+}
+
+.btn-bar{
+  position: absolute;
+  left: 10vw;
+  bottom: 20vh;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-bar__first{
+  justify-content: flex-end;
+}
+
+.form-why-index{
+  max-height: 35vh;
+  overflow-y: scroll;
+}
+
 
 @media (max-width: 640px) {
   .input-what{
     margin-top: 15px;
     width: 90vw;
+  }
+
+  .input-when{
+    margin-top: 15px;
+    width: 60vw;
+  }
+
+  .input-how-much{
+    margin-top: 15px;
+    width: 50vw;
   }
 }
