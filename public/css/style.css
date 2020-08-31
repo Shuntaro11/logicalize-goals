@@ -144,10 +144,6 @@ select{
     width: 250px;
   }
 
-  input::placeholder {
-    font-size: 10px;
-  }
-
 }
 
 
@@ -293,10 +289,14 @@ select{
   padding-top: 15vh;
 }
 
-.input-what{
-  margin-top: 30px;
+.create-form-input{
   width: 80vw;
 }
+
+.input-what{
+  margin-top: 30px;
+}
+
 .input-when{
   margin-top: 30px;
   width: 30vw;
@@ -340,11 +340,26 @@ select{
   padding-bottom: 35vh;
 }
 
+.how-many-days{
+  text-decoration: underline;
+}
+
+.small-label{
+  width: 80vw;
+  margin: 20px auto 8px;
+  text-align: left;
+}
+
 
 @media (max-width: 640px) {
+
+  .create-form-input{
+    width: 80vw;
+    width: 90vw;
+  }
+
   .input-what{
     margin-top: 15px;
-    width: 90vw;
   }
 
   .input-when{
@@ -355,5 +370,10 @@ select{
   .input-how-much{
     margin-top: 15px;
     width: 50vw;
+  }
+
+  .small-label{
+    width: 90vw;
+    margin: 10px auto 4px;
   }
 }
