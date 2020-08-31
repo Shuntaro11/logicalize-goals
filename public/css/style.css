@@ -212,6 +212,8 @@ input::placeholder {
   background: #ff5353;
 }
 
+/* goal create画面 */
+
 .goal-form{
   padding-top: 25vh;
 }
@@ -221,8 +223,9 @@ input::placeholder {
   width: 80vw;
 }
 
-/* @media (max-width: 640px) {
-  .goal-form{
-    padding-top: 3vh;
+@media (max-width: 640px) {
+  .input-what{
+    margin-top: 15px;
+    width: 90vw;
   }
-} */
+}

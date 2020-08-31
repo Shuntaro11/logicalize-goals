@@ -22,8 +22,9 @@
   @else
 
     @include("header")
-
-    <button class="btn add-goal-btn" type="button">Add new goal</button>
+    <a href="/goals/create">
+      <button class="btn add-goal-btn" type="button">Add new goal</button>
+    </a>
 
     <h4 >List of your goals</h4>
 
