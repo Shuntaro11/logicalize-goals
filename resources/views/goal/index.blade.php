@@ -30,19 +30,10 @@
 
     <div class="goal-index">
 
-      <a href="/" class="goal-link">ONEOKROCKのライブに行く</a>
-      <a href="/" class="goal-link">両親の家を建てる</a>
-      <a href="/" class="goal-link">Hawaii旅行へ行く</a>
-      <a href="/" class="goal-link">IELTSでスコア6以上</a>
-      <a href="/" class="goal-link">100万円貯金する</a>
-      <a href="/" class="goal-link">ホノルルマラソンに出場する</a>
-      <a href="/" class="goal-link">サザンのライブに行く</a>
-      <a href="/" class="goal-link">10ヶ国旅をする</a>
-      <a href="/" class="goal-link">Hawaii旅行へ行く</a>
-      <a href="/" class="goal-link">IELTSでスコア6以上</a>
-      <a href="/" class="goal-link">100万円貯金する</a>
-      <a href="/" class="goal-link">ホノルルマラソンに出場する</a>
-
+      @foreach($goals as $goal)
+        <a href="/" class="goal-link">{{ $goal->what }}</a>
+      @endforeach
+      
     </div>
 
   @endguest

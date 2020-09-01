@@ -25,7 +25,7 @@
         <p class="mark-number" id="markNumber6">6</p>
     </div>
     
-    <form class="goal-form" method="POST" action="{{ route('login') }}">
+    <form class="goal-form" action="/goals" method="post" enctype="multipart/form-data">
         @csrf
 
 
@@ -62,15 +62,15 @@
                     @enderror
                 </div>
                 <h5 class="small-label">なぜ達成したいですか？</h5>
-                <textarea id="inputWhy1" class="create-form-input" name="why" rows="2" placeholder="理由を入力してください"></textarea>
+                <textarea id="inputWhy1" class="create-form-input" name="why1" rows="2" placeholder="理由を入力してください"></textarea>
                 <h5 class="small-label">その他に理由はありますか？</h5>
-                <textarea id="inputWhy2" class="create-form-input" name="why" rows="2" placeholder="ある場合は入力してください"></textarea>
+                <textarea id="inputWhy2" class="create-form-input" name="why2" rows="2" placeholder="ある場合は入力してください"></textarea>
                 <h5 class="small-label">その他に理由はありますか？</h5>
-                <textarea id="inputWhy3" class="create-form-input" name="why" rows="2" placeholder="ある場合は入力してください"></textarea>
+                <textarea id="inputWhy3" class="create-form-input" name="why3" rows="2" placeholder="ある場合は入力してください"></textarea>
                 <h5 class="small-label">その他に理由はありますか？</h5>
-                <textarea id="inputWhy4" class="create-form-input" name="why" rows="2" placeholder="ある場合は入力してください"></textarea>
+                <textarea id="inputWhy4" class="create-form-input" name="why4" rows="2" placeholder="ある場合は入力してください"></textarea>
                 <h5 class="small-label">その他に理由はありますか？</h5>
-                <textarea id="inputWhy5" class="create-form-input" name="why" rows="2" placeholder="ある場合は入力してください"></textarea>
+                <textarea id="inputWhy5" class="create-form-input" name="why5" rows="2" placeholder="ある場合は入力してください"></textarea>
             </div>
             <div class="btn-bar">
                 <button type="button" class="small-btn" id="prevBtn2">◁prev</button>
@@ -99,6 +99,7 @@
             </div>
         </div>
 
+
         <div id="stepForm" class="goal-form-each goal-form-each__why">
             <div class="main-text">Lets subdivide the goal !</div>
             <p class="main-text-sub">小目標を立て細分化しましょう！</p>
@@ -123,34 +124,34 @@
 
                 <h5 class="mgt-2">※未入力のステップは反映されません</h5>
                 <h5 id="stepDay1" class="small-label"></h5>
-                <textarea id="inputStep1" class="create-form-input" name="step" rows="3" placeholder="１個目のステップを入力してください"></textarea>
+                <textarea id="inputStep1" class="create-form-input" name="step1" rows="3" placeholder="１個目のステップを入力してください"></textarea>
 
                 <h5 id="stepDay2" class="small-label"></h5>
-                <textarea id="inputStep2" class="create-form-input display-none" name="step" rows="3" placeholder="２個目のステップを入力してください"></textarea>
+                <textarea id="inputStep2" class="create-form-input display-none" name="step2" rows="3" placeholder="２個目のステップを入力してください"></textarea>
 
                 <h5 id="stepDay3" class="small-label"></h5>
-                <textarea id="inputStep3" class="create-form-input display-none" name="step" rows="3" placeholder="３個目のステップを入力してください"></textarea>
+                <textarea id="inputStep3" class="create-form-input display-none" name="step3" rows="3" placeholder="３個目のステップを入力してください"></textarea>
+
+                <h5 id="stepDay4" class="small-label"></h5>
+                <textarea id="inputStep4" class="create-form-input display-none" name="step4" rows="3" placeholder="４個目のステップを入力してください"></textarea>
 
                 <h5 id="stepDay5" class="small-label"></h5>
-                <textarea id="inputStep5" class="create-form-input display-none" name="step" rows="3" placeholder="４個目のステップを入力してください"></textarea>
-
-                <h5 id="stepDay5" class="small-label"></h5>
-                <textarea id="inputStep5" class="create-form-input display-none" name="step" rows="3" placeholder="５個目のステップを入力してください"></textarea>
+                <textarea id="inputStep5" class="create-form-input display-none" name="step5" rows="3" placeholder="５個目のステップを入力してください"></textarea>
 
                 <h5 id="stepDay6" class="small-label"></h5>
-                <textarea id="inputStep6" class="create-form-input display-none" name="step" rows="3" placeholder="６個目のステップを入力してください"></textarea>
+                <textarea id="inputStep6" class="create-form-input display-none" name="step6" rows="3" placeholder="６個目のステップを入力してください"></textarea>
                 
                 <h5 id="stepDay7" class="small-label"></h5>
-                <textarea id="inputStep7" class="create-form-input display-none" name="step" rows="3" placeholder="７個目のステップを入力してください"></textarea>
+                <textarea id="inputStep7" class="create-form-input display-none" name="step7" rows="3" placeholder="７個目のステップを入力してください"></textarea>
                 
                 <h5 id="stepDay8" class="small-label"></h5>
-                <textarea id="inputStep8" class="create-form-input display-none" name="step" rows="3" placeholder="８個目のステップを入力してください"></textarea>
+                <textarea id="inputStep8" class="create-form-input display-none" name="step8" rows="3" placeholder="８個目のステップを入力してください"></textarea>
                 
                 <h5 id="stepDay9" class="small-label"></h5>
-                <textarea id="inputStep9" class="create-form-input display-none" name="step" rows="3" placeholder="９個目のステップを入力してください"></textarea>
+                <textarea id="inputStep9" class="create-form-input display-none" name="step9" rows="3" placeholder="９個目のステップを入力してください"></textarea>
                 
                 <h5 id="stepDay10" class="small-label"></h5>
-                <textarea id="inputStep10" class="create-form-input display-none" name="step" rows="3" placeholder="１０個目のステップを入力してください"></textarea>
+                <textarea id="inputStep10" class="create-form-input display-none" name="step10" rows="3" placeholder="１０個目のステップを入力してください"></textarea>
             
             </div>
 
