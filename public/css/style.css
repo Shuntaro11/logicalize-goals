@@ -7,6 +7,12 @@
 body{
   text-align: center;
   font-family: Montserrat,Arial,sans-serif;
+  color: white;
+  font-size: 16px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
 h1{
@@ -23,19 +29,43 @@ h3{
 
 h4{
   font-size: 1em;
+  font-weight: 300;
 }
 
 h5{
   font-size: 0.75em;
+  font-weight: 300;
 }
 
 h6{
   font-size: 0.625em;
+  font-weight: 300;
 }
 
 a{
   text-decoration: none;
   color: white;
+}
+
+.mgt-2{
+  margin-top: 2vh;
+}
+
+.display-none{
+  display: none;
+}
+
+textarea{
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 5px;
+}
+
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 input{
@@ -49,11 +79,22 @@ input{
 }
 
 input::placeholder {
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .input-group{
   margin-bottom: 10px;
+}
+
+select{
+  padding: 10px 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  outline: none;
+  color: white;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .btn{
@@ -66,6 +107,8 @@ input::placeholder {
   color: white;
   outline: none;
   font-family: Montserrat,Arial,sans-serif;
+  cursor: pointer;
+  box-shadow: 0 5px 14px 0 rgba(0,0,0,.1);
 }
 
 .btn:hover{
@@ -83,8 +126,8 @@ input::placeholder {
 }
 
 .main-text-sub{
-  font-size: 18px;
-  color: rgba(245, 245, 245, .8);
+  font-size: 15px;
+  font-weight: 300;
 }
 
 .background-image{
@@ -98,6 +141,10 @@ input::placeholder {
 }
 
 @media (max-width: 640px) {
+
+  body{
+    font-size: 12px;
+  }
 
   .main-text{
     font-size: 18px;
@@ -142,6 +189,7 @@ input::placeholder {
   display: flex;
   justify-content: flex-end;
   padding-right: 100px;
+  z-index: 1000;
 }
 
 .nav-link{
@@ -197,32 +245,190 @@ input::placeholder {
   width: 80vw;
   padding: 15px 20px;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.3);
   margin: 1vh 0;
   overflow: hidden;
   white-space: nowrap;
   color: #2c2c2c;
+
 }
 
 .goal-link:hover{
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .add-goal-btn:hover{
   background: #ff5353;
 }
 
-.goal-form{
+/* goal create画面 */
+
+.number-vav-bar{
+  position: absolute;
+  top: 13vh;
+  left: 10vw;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.mark-number{
+  width: 30px;
+  line-height: 30px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #f96332;
+}
+
+.mark-number__first{
+  background: white;
+  box-shadow: 0 5px 14px 0 rgba(0,0,0,.3);
+}
+
+.goal-form-each{
+  position: absolute;
+  background: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6));
+  width: 100vw;
+  min-height: 100vh;
   padding-top: 25vh;
+  display: none;
+}
+
+.goal-form-each__first{
+  display: block;
+}
+
+.goal-form-each__why{
+  padding-top: 15vh;
+}
+
+.goal-form-each__how-much{
+  padding-top: 15vh;
+}
+
+.create-form-input{
+  width: 80vw;
 }
 
 .input-what{
   margin-top: 30px;
-  width: 80vw;
 }
 
-/* @media (max-width: 640px) {
-  .goal-form{
-    padding-top: 3vh;
+.input-when{
+  margin-top: 30px;
+  width: 30vw;
+  text-align: center;
+}
+
+.input-how-much{
+  margin-top: 30px;
+  width: 20vw;
+  text-align: center;
+}
+
+.small-btn{
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 2vh;
+  background: white;
+  color: #f96332;
+  outline: none;
+  font-family: Montserrat,Arial,sans-serif;
+  box-shadow: 0 5px 14px 0 rgba(0,0,0,.2);
+  cursor: pointer;
+}
+
+.small-btn__submit{
+  background: #f96332;
+  color: white;
+}
+
+.btn-bar{
+  position: absolute;
+  left: 10vw;
+  bottom: 20vh;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-bar__first{
+  justify-content: flex-end;
+}
+
+.create-form-index{
+  padding-bottom: 35vh;
+}
+
+.create-form-index__confirm{
+  margin-top: 30px;
+  text-align: left;
+  padding: 0 20vw 35vh;
+}
+
+.how-many-days{
+  border: 1px solid white;
+  border-radius: 3px;
+  display: none;
+  padding: 5px 10px;
+}
+
+.small-label{
+  width: 80vw;
+  margin: 20px auto 8px;
+  text-align: left;
+}
+
+.errors-index{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.each-error{
+  color: maroon;
+  background: rgba(255, 255, 255, 0.3);
+  line-height: 20px;
+}
+
+.submit-message{
+  text-align: center;
+}
+
+
+@media (max-width: 640px) {
+
+  .create-form-input{
+    width: 80vw;
+    width: 90vw;
   }
-} */
+
+  .input-what{
+    margin-top: 15px;
+  }
+
+  .input-when{
+    margin-top: 15px;
+    width: 60vw;
+  }
+
+  .input-how-much{
+    margin-top: 15px;
+    width: 50vw;
+  }
+
+  .small-label{
+    width: 90vw;
+    margin: 10px auto 4px;
+  }
+
+  .create-form-index__confirm{
+    margin-top: 15px;
+    padding: 0 10vw 35vh;
+  }
+
+  .submit-message{
+    text-align: left;
+  }
+}
