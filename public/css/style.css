@@ -11,6 +11,10 @@ body{
   font-size: 16px;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
 h1{
   font-size: 2em;
 }
@@ -49,6 +53,19 @@ a{
 
 .display-none{
   display: none;
+}
+
+textarea{
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 5px;
+}
+
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 input{
@@ -300,6 +317,7 @@ select{
 .input-when{
   margin-top: 30px;
   width: 30vw;
+  text-align: center;
 }
 
 .input-how-much{
@@ -341,7 +359,10 @@ select{
 }
 
 .how-many-days{
-  text-decoration: underline;
+  border: 1px solid white;
+  border-radius: 3px;
+  display: none;
+  padding: 5px 10px;
 }
 
 .small-label{

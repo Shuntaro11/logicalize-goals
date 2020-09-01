@@ -77,7 +77,7 @@
             <div class="main-text">When do you want to achieve that ?</div>
             <p class="main-text-sub">それはいつまでに達成したいですか？</p>
             <div>
-                <input id="inputWhen" class="input-group input-when" type="date" name="when" value="{{ old('when') }}" required>
+                <input id="inputWhen" class="input-group input-when" type="date" name="when" min={{ $today }} value="{{ old('when') }}" required>
             
                 <div>
                     @error('when')
@@ -93,7 +93,7 @@
             </div>
         </div>
         <div id="howMuchForm" class="goal-form-each goal-form-each__how-much">
-            <div class="main-text">How important? How urgent ?</div>
+            <div class="main-text">How important ? How urgent ?</div>
             <p class="main-text-sub">その重要度は？また緊急度は？</p>
             <h5>※1~10の数値で入力してください</h5>
 
@@ -143,34 +143,34 @@
             <div class="form-why-index">
                 
                 <h4 id="stepDay1" class="small-label"></h4>
-                <input class="create-form-input" type="text" name="step" required placeholder="１個目のステップを入力してください">
+                <textarea class="create-form-input" name="step" rows="3" placeholder="１個目のステップを入力してください" required></textarea>
 
                 <h4 id="stepDay2" class="small-label"></h4>
-                <input id="step2" class="create-form-input display-none" type="text" name="step" placeholder="２個目のステップを入力してください">
+                <textarea id="step2" class="create-form-input display-none" name="step" rows="3" placeholder="２個目のステップを入力してください" required></textarea>
 
                 <h4 id="stepDay3" class="small-label"></h4>
-                <input id="step3" class="create-form-input display-none" type="text" name="step" placeholder="３個目のステップを入力してください">
+                <textarea id="step3" class="create-form-input display-none" name="step" rows="3" placeholder="３個目のステップを入力してください" required></textarea>
 
                 <h4 id="stepDay4" class="small-label"></h4>
-                <input id="step4" class="create-form-input display-none" type="text" name="step" placeholder="４個目のステップを入力してください">
+                <textarea id="step4" class="create-form-input display-none" name="step" rows="3" placeholder="４個目のステップを入力してください" required></textarea>
 
                 <h4 id="stepDay5" class="small-label"></h4>
-                <input id="step5" class="create-form-input display-none" type="text" name="step" placeholder="５個目のステップを入力してください">
+                <textarea id="step5" class="create-form-input display-none" name="step" rows="3" placeholder="５個目のステップを入力してください" required></textarea>
 
                 <h4 id="stepDay6" class="small-label"></h4>
-                <input id="step6" class="create-form-input display-none" type="text" name="step" placeholder="６個目のステップを入力してください">
+                <textarea id="step6" class="create-form-input display-none" name="step" rows="3" placeholder="６個目のステップを入力してください" required></textarea>
                 
                 <h4 id="stepDay7" class="small-label"></h4>
-                <input id="step7" class="create-form-input display-none" type="text" name="step" placeholder="７個目のステップを入力してください">
+                <textarea id="step7" class="create-form-input display-none" name="step" rows="3" placeholder="７個目のステップを入力してください" required></textarea>
                 
                 <h4 id="stepDay8" class="small-label"></h4>
-                <input id="step8" class="create-form-input display-none" type="text" name="step" placeholder="８個目のステップを入力してください">
+                <textarea id="step8" class="create-form-input display-none" name="step" rows="3" placeholder="８個目のステップを入力してください" required></textarea>
                 
                 <h4 id="stepDay9" class="small-label"></h4>
-                <input id="step9" class="create-form-input display-none" type="text" name="step" placeholder="９個目のステップを入力してください">
+                <textarea id="step9" class="create-form-input display-none" name="step" rows="3" placeholder="９個目のステップを入力してください" required></textarea>
                 
                 <h4 id="stepDay10" class="small-label"></h4>
-                <input id="step10" class="create-form-input display-none" type="text" name="step" placeholder="１０個目のステップを入力してください">
+                <textarea id="step10" class="create-form-input display-none" name="step" rows="3" placeholder="１０個目のステップを入力してください" required></textarea>
             
             </div>
 

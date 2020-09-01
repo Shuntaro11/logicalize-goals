@@ -28,17 +28,20 @@ $(function(){
 
     if(isNaN(daysLeft)){
 
-      $('#howManyDays').text("");
+      $('#howManyDays').css("display", "inline-block");
+      $('#howManyDays').text("有効な日付が選択されていません");
 
     }else if(daysLeft > 0){
 
+      $('#howManyDays').css("display", "inline-block");
       $('#howManyDays').text(`${whenY} / ${whenM} / ${whenD} まで残り ${daysLeft} 日`);
       
       displayStepDays();
 
     }else{
 
-      $('#howManyDays').text("");
+      $('#howManyDays').css("display", "inline-block");
+      $('#howManyDays').text("有効な日付が選択されていません");
 
     }
 
