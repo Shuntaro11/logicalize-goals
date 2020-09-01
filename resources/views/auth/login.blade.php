@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include("header")
+@include("gest-header")
 
 <div class="register-container">
     

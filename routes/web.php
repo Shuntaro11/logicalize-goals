@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'GoalController@index')->name('top');
+Route::get('/', 'TopController@index')->name('top');
 
 Auth::routes();
 
-Route::resource('goals', 'GoalController')->only(['create', 'store', 'show', 'edit', 'update', 'destroy']);
+Route::resource('goals', 'GoalController');
