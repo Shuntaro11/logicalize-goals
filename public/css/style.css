@@ -392,6 +392,10 @@ select{
   line-height: 20px;
 }
 
+.submit-message{
+  text-align: center;
+}
+
 
 @media (max-width: 640px) {
 
@@ -422,5 +426,9 @@ select{
   .create-form-index__confirm{
     margin-top: 15px;
     padding: 0 10vw 35vh;
+  }
+
+  .submit-message{
+    text-align: left;
   }
 }

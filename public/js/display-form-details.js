@@ -15,38 +15,171 @@ $(function(){
   let inputWhy4 = "";
   let inputWhy5 = "";
 
+  let inputStep1 = "";
+  let inputStep2 = "";
+  let inputStep3 = "";
+  let inputStep4 = "";
+  let inputStep5 = "";
+  let inputStep6 = "";
+  let inputStep7 = "";
+  let inputStep8 = "";
+  let inputStep9 = "";
+  let inputStep10 = "";
 
+  // 目標が入力されたら発火
   $('#inputWhat').blur(function(e) {
     checkError("what");
   });
 
+  // 時期が設定されたら発火
   $('#inputWhen').blur(function(e) {
     howManyDaysLeft();
   });
 
+  // 理由が入力されたら発火
   $('#inputWhy1').blur(function(e) {
     inputWhy1 = $("#inputWhy1").val();
     checkError("why1");
   });
-
   $('#inputWhy2').blur(function(e) {
     inputWhy2 = $("#inputWhy2").val();
     checkError("why2");
   });
-
   $('#inputWhy3').blur(function(e) {
     inputWhy3 = $("#inputWhy3").val();
     checkError("why3");
   });
-
   $('#inputWhy4').blur(function(e) {
     inputWhy4 = $("#inputWhy4").val();
     checkError("why4");
   });
-
   $('#inputWhy5').blur(function(e) {
     inputWhy5 = $("#inputWhy5").val();
     checkError("why5");
+  });
+
+  // ステップが入力されたら発火
+  $('#inputStep1').blur(function(e) {
+    inputStep1 = $("#inputStep1").val();
+    checkError("step1");
+  });
+  $('#inputStep2').blur(function(e) {
+    inputStep2 = $("#inputStep2").val();
+    checkError("step2");
+  });
+  $('#inputStep3').blur(function(e) {
+    inputStep3 = $("#inputStep3").val();
+    checkError("step3");
+  });
+  $('#inputStep4').blur(function(e) {
+    inputStep4 = $("#inputStep4").val();
+    checkError("step4");
+  });
+  $('#inputStep5').blur(function(e) {
+    inputStep5 = $("#inputStep5").val();
+    checkError("step5");
+  });
+  $('#inputStep6').blur(function(e) {
+    inputStep6 = $("#inputStep6").val();
+    checkError("step6");
+  });
+  $('#inputStep7').blur(function(e) {
+    inputStep7 = $("#inputStep7").val();
+    checkError("step7");
+  });
+  $('#inputStep8').blur(function(e) {
+    inputStep8 = $("#inputStep8").val();
+    checkError("step8");
+  });
+  $('#inputStep9').blur(function(e) {
+    inputStep9 = $("#inputStep9").val();
+    checkError("step9");
+  });
+  $('#inputStep10').blur(function(e) {
+    inputStep10 = $("#inputStep10").val();
+    checkError("step10");
+  });
+
+  // 重要度を確認画面に表示
+  $('#selectImportant').change(function(e) {
+
+    let selectImportant = $("#selectImportant").val();
+    switch(selectImportant) {
+      case "1":
+        $('#confirmImportant').text("１");
+      break;
+      case "2":
+        $('#confirmImportant').text("２");
+      break;
+      case "3":
+        $('#confirmImportant').text("３");
+      break;
+      case "4":
+        $('#confirmImportant').text("４");
+      break;
+      case "5":
+        $('#confirmImportant').text("５");
+      break;
+      case "6":
+        $('#confirmImportant').text("６");
+      break;
+      case "7":
+        $('#confirmImportant').text("７");
+      break;
+      case "8":
+        $('#confirmImportant').text("８");
+      break;
+      case "9":
+        $('#confirmImportant').text("９");
+      break;
+      case "10":
+        $('#confirmImportant').text("１０");
+      break;
+      default:
+      break;
+    }
+
+  });
+
+  // 緊急度を確認画面に表示
+  $('#selectUrgent').change(function(e) {
+
+    let selectUrgent = $("#selectUrgent").val();
+    switch(selectUrgent) {
+      case "1":
+        $('#confirmUrgent').text("１");
+      break;
+      case "2":
+        $('#confirmUrgent').text("２");
+      break;
+      case "3":
+        $('#confirmUrgent').text("３");
+      break;
+      case "4":
+        $('#confirmUrgent').text("４");
+      break;
+      case "5":
+        $('#confirmUrgent').text("５");
+      break;
+      case "6":
+        $('#confirmUrgent').text("６");
+      break;
+      case "7":
+        $('#confirmUrgent').text("７");
+      break;
+      case "8":
+        $('#confirmUrgent').text("８");
+      break;
+      case "9":
+        $('#confirmUrgent').text("９");
+      break;
+      case "10":
+        $('#confirmUrgent').text("１０");
+      break;
+      default:
+      break;
+    }
+
   });
 
   // 今日から目標達成日までの日数を計算
@@ -97,177 +230,177 @@ $(function(){
 
     if(howManySteps === "1"){
 
-      $('#step2').val('');
-      $('#step3').val('');
-      $('#step4').val('');
-      $('#step5').val('');
-      $('#step6').val('');
-      $('#step7').val('');
-      $('#step8').val('');
-      $('#step9').val('');
-      $('#step10').val('');
+      $('#inputStep2').val('');
+      $('#inputStep3').val('');
+      $('#inputStep4').val('');
+      $('#inputStep5').val('');
+      $('#inputStep6').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
 
-      $("#step2").css("display", "none");
-      $("#step3").css("display", "none");
-      $("#step4").css("display", "none");
-      $("#step5").css("display", "none");
-      $("#step6").css("display", "none");
-      $("#step7").css("display", "none");
-      $("#step8").css("display", "none");
-      $("#step9").css("display", "none");
-      $("#step10").css("display", "none");
+      $('#inputStep2').css("display", "none");
+      $('#inputStep3').css("display", "none");
+      $('#inputStep4').css("display", "none");
+      $('#inputStep5').css("display", "none");
+      $('#inputStep6').css("display", "none");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
 
     }else if(howManySteps === "2"){
 
-      $('#step3').val('');
-      $('#step4').val('');
-      $('#step5').val('');
-      $('#step6').val('');
-      $('#step7').val('');
-      $('#step8').val('');
-      $('#step9').val('');
-      $('#step10').val('');
+      $('#inputStep3').val('');
+      $('#inputStep4').val('');
+      $('#inputStep5').val('');
+      $('#inputStep6').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
 
-      $("#step2").css("display", "inline-block");
-      $("#step3").css("display", "none");
-      $("#step4").css("display", "none");
-      $("#step5").css("display", "none");
-      $("#step6").css("display", "none");
-      $("#step7").css("display", "none");
-      $("#step8").css("display", "none");
-      $("#step9").css("display", "none");
-      $("#step10").css("display", "none");
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "none");
+      $('#inputStep4').css("display", "none");
+      $('#inputStep5').css("display", "none");
+      $('#inputStep6').css("display", "none");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
 
     }else if(howManySteps === "3"){
 
-      $('#step4').val('');
-      $('#step5').val('');
-      $('#step6').val('');
-      $('#step7').val('');
-      $('#step8').val('');
-      $('#step9').val('');
-      $('#step10').val('');
+      $('#inputStep4').val('');
+      $('#inputStep5').val('');
+      $('#inputStep6').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
 
-      $("#step2").css("display", "inline-block");
-      $("#step3").css("display", "inline-block");
-      $("#step4").css("display", "none");
-      $("#step5").css("display", "none");
-      $("#step6").css("display", "none");
-      $("#step7").css("display", "none");
-      $("#step8").css("display", "none");
-      $("#step9").css("display", "none");
-      $("#step10").css("display", "none");
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "none");
+      $('#inputStep5').css("display", "none");
+      $('#inputStep6').css("display", "none");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
 
     }else if(howManySteps === "4"){
 
-      $('#step5').val('');
-      $('#step6').val('');
-      $('#step7').val('');
-      $('#step8').val('');
-      $('#step9').val('');
-      $('#step10').val('');
+      $('#inputStep5').val('');
+      $('#inputStep6').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
 
-      $("#step2").css("display", "inline-block");
-      $("#step3").css("display", "inline-block");
-      $("#step4").css("display", "inline-block");
-      $("#step5").css("display", "none");
-      $("#step6").css("display", "none");
-      $("#step7").css("display", "none");
-      $("#step8").css("display", "none");
-      $("#step9").css("display", "none");
-      $("#step10").css("display", "none");
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "none");
+      $('#inputStep6').css("display", "none");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
 
     }else if(howManySteps === "5"){
 
-      $('#step6').val('');
-      $('#step7').val('');
-      $('#step8').val('');
-      $('#step9').val('');
-      $('#step10').val('');
+      $('#inputStep6').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
 
-      $("#step2").css("display", "inline-block");
-      $("#step3").css("display", "inline-block");
-      $("#step4").css("display", "inline-block");
-      $("#step5").css("display", "inline-block");
-      $("#step6").css("display", "none");
-      $("#step7").css("display", "none");
-      $("#step8").css("display", "none");
-      $("#step9").css("display", "none");
-      $("#step10").css("display", "none");
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "none");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
 
     }else if(howManySteps === "6"){
 
-      $('#step7').val('');
-      $('#step8').val('');
-      $('#step9').val('');
-      $('#step10').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
 
-      $("#step2").css("display", "inline-block");
-      $("#step3").css("display", "inline-block");
-      $("#step4").css("display", "inline-block");
-      $("#step5").css("display", "inline-block");
-      $("#step6").css("display", "inline-block");
-      $("#step7").css("display", "none");
-      $("#step8").css("display", "none");
-      $("#step9").css("display", "none");
-      $("#step10").css("display", "none");
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "inline-block");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
 
     }else if(howManySteps === "7"){
 
-      $('#step8').val('');
-      $('#step9').val('');
-      $('#step10').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
 
-      $("#step2").css("display", "inline-block");
-      $("#step3").css("display", "inline-block");
-      $("#step4").css("display", "inline-block");
-      $("#step5").css("display", "inline-block");
-      $("#step6").css("display", "inline-block");
-      $("#step7").css("display", "inline-block");
-      $("#step8").css("display", "none");
-      $("#step9").css("display", "none");
-      $("#step10").css("display", "none");
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "inline-block");
+      $('#inputStep7').css("display", "inline-block");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
 
     }else if(howManySteps === "8"){
 
-      $('#step9').val('');
-      $('#step10').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
 
-      $("#step2").css("display", "inline-block");
-      $("#step3").css("display", "inline-block");
-      $("#step4").css("display", "inline-block");
-      $("#step5").css("display", "inline-block");
-      $("#step6").css("display", "inline-block");
-      $("#step7").css("display", "inline-block");
-      $("#step8").css("display", "inline-block");
-      $("#step9").css("display", "none");
-      $("#step10").css("display", "none");
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "inline-block");
+      $('#inputStep7').css("display", "inline-block");
+      $('#inputStep8').css("display", "inline-block");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
 
     }else if(howManySteps === "9"){
 
-      $('#step10').val('');
+      $('#inputStep10').val('');
 
-      $("#step2").css("display", "inline-block");
-      $("#step3").css("display", "inline-block");
-      $("#step4").css("display", "inline-block");
-      $("#step5").css("display", "inline-block");
-      $("#step6").css("display", "inline-block");
-      $("#step7").css("display", "inline-block");
-      $("#step8").css("display", "inline-block");
-      $("#step9").css("display", "inline-block");
-      $("#step10").css("display", "none");
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "inline-block");
+      $('#inputStep7').css("display", "inline-block");
+      $('#inputStep8').css("display", "inline-block");
+      $('#inputStep9').css("display", "inline-block");
+      $('#inputStep10').css("display", "none");
 
     }else if(howManySteps === "10"){
 
-      $("#step2").css("display", "inline-block");
-      $("#step3").css("display", "inline-block");
-      $("#step4").css("display", "inline-block");
-      $("#step5").css("display", "inline-block");
-      $("#step6").css("display", "inline-block");
-      $("#step7").css("display", "inline-block");
-      $("#step8").css("display", "inline-block");
-      $("#step9").css("display", "inline-block");
-      $("#step10").css("display", "inline-block");
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "inline-block");
+      $('#inputStep7').css("display", "inline-block");
+      $('#inputStep8').css("display", "inline-block");
+      $('#inputStep9').css("display", "inline-block");
+      $('#inputStep10').css("display", "inline-block");
 
     }
   
@@ -618,7 +751,7 @@ $(function(){
     
     }else if(form === "why1"){
 
-      checkWhy();
+      checkWhyBlank();
       if(inputWhy1 === ""){
         $('#confirmWhy1').text("");
       }else{
@@ -627,7 +760,7 @@ $(function(){
       
     }else if(form === "why2"){
 
-      checkWhy();
+      checkWhyBlank();
       if(inputWhy2 === ""){
         $('#confirmWhy2').text("");
       }else{
@@ -636,7 +769,7 @@ $(function(){
 
     }else if(form === "why3"){
 
-      checkWhy();
+      checkWhyBlank();
       if(inputWhy3 === ""){
         $('#confirmWhy3').text("");
       }else{
@@ -645,7 +778,7 @@ $(function(){
 
     }else if(form === "why4"){
 
-      checkWhy();
+      checkWhyBlank();
       if(inputWhy4 === ""){
         $('#confirmWhy4').text("");
       }else{
@@ -654,18 +787,108 @@ $(function(){
 
     }else if(form === "why5"){
 
-      checkWhy();
+      checkWhyBlank();
       if(inputWhy5 === ""){
         $('#confirmWhy5').text("");
       }else{
         $('#confirmWhy5').text(`・${inputWhy5}`);
       }
 
+    }else if(form === "step1"){
+
+      checkStepBlank();
+      if(inputStep1 === ""){
+        $('#confirmStep1').text("");
+      }else{
+        $('#confirmStep1').text(`・${inputStep1}`);
+      }
+      
+    }else if(form === "step2"){
+
+      checkStepBlank();
+      if(inputStep2 === ""){
+        $('#confirmStep2').text("");
+      }else{
+        $('#confirmStep2').text(`・${inputStep2}`);
+      }
+      
+    }else if(form === "step3"){
+
+      checkStepBlank();
+      if(inputStep3 === ""){
+        $('#confirmStep3').text("");
+      }else{
+        $('#confirmStep3').text(`・${inputStep3}`);
+      }
+      
+    }else if(form === "step4"){
+
+      checkStepBlank();
+      if(inputStep4 === ""){
+        $('#confirmStep4').text("");
+      }else{
+        $('#confirmStep4').text(`・${inputStep4}`);
+      }
+      
+    }else if(form === "step5"){
+
+      checkStepBlank();
+      if(inputStep5 === ""){
+        $('#confirmStep5').text("");
+      }else{
+        $('#confirmStep5').text(`・${inputStep5}`);
+      }
+      
+    }else if(form === "step6"){
+
+      checkStepBlank();
+      if(inputStep6 === ""){
+        $('#confirmStep6').text("");
+      }else{
+        $('#confirmStep6').text(`・${inputStep6}`);
+      }
+      
+    }else if(form === "step7"){
+
+      checkStepBlank();
+      if(inputStep7 === ""){
+        $('#confirmStep7').text("");
+      }else{
+        $('#confirmStep7').text(`・${inputStep7}`);
+      }
+      
+    }else if(form === "step8"){
+
+      checkStepBlank();
+      if(inputStep8 === ""){
+        $('#confirmStep8').text("");
+      }else{
+        $('#confirmStep8').text(`・${inputStep8}`);
+      }
+      
+    }else if(form === "step9"){
+
+      checkStepBlank();
+      if(inputStep9 === ""){
+        $('#confirmStep9').text("");
+      }else{
+        $('#confirmStep9').text(`・${inputStep9}`);
+      }
+      
+    }else if(form === "step10"){
+
+      checkStepBlank();
+      if(inputStep10 === ""){
+        $('#confirmStep10').text("");
+      }else{
+        $('#confirmStep10').text(`・${inputStep10}`);
+      }
+      
     }
   }
 
-  // 理由の入力欄が全て未入力ではないことを確認
-  function checkWhy() {
+  // 理由の入力欄が全て未入力ではないかチェック
+  function checkWhyBlank() {
 
     if(inputWhy1 === "" && inputWhy2 === "" && inputWhy3 === "" && inputWhy4 === "" && inputWhy5 === ""){
 
@@ -674,6 +897,22 @@ $(function(){
     }else{
 
       $('#errorWhy').text("");
+
+    }
+
+  }
+
+  // ステップの入力欄が全て未入力ではないかチェック
+  function checkStepBlank() {
+
+    if(inputStep1 === "" && inputStep2 === "" && inputStep3 === "" && inputStep4 === "" && inputStep5 === ""
+       && inputStep6 === "" && inputStep7 === "" && inputStep8 === "" && inputStep9 === "" && inputStep10 === ""){
+
+      $('#errorStep').text("※ステップが未入力です");
+
+    }else{
+
+      $('#errorStep').text("");
 
     }
 

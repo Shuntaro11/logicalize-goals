@@ -120,36 +120,37 @@
             </select>
 
             <div class="create-form-index">
-                
+
+                <h5 class="mgt-2">※未入力のステップは反映されません</h5>
                 <h5 id="stepDay1" class="small-label"></h5>
-                <textarea class="create-form-input" name="step" rows="3" placeholder="１個目のステップを入力してください"></textarea>
+                <textarea id="inputStep1" class="create-form-input" name="step" rows="3" placeholder="１個目のステップを入力してください"></textarea>
 
                 <h5 id="stepDay2" class="small-label"></h5>
-                <textarea id="step2" class="create-form-input display-none" name="step" rows="3" placeholder="２個目のステップを入力してください"></textarea>
+                <textarea id="inputStep2" class="create-form-input display-none" name="step" rows="3" placeholder="２個目のステップを入力してください"></textarea>
 
                 <h5 id="stepDay3" class="small-label"></h5>
-                <textarea id="step3" class="create-form-input display-none" name="step" rows="3" placeholder="３個目のステップを入力してください"></textarea>
+                <textarea id="inputStep3" class="create-form-input display-none" name="step" rows="3" placeholder="３個目のステップを入力してください"></textarea>
 
                 <h5 id="stepDay5" class="small-label"></h5>
-                <textarea id="step5" class="create-form-input display-none" name="step" rows="3" placeholder="４個目のステップを入力してください"></textarea>
+                <textarea id="inputStep5" class="create-form-input display-none" name="step" rows="3" placeholder="４個目のステップを入力してください"></textarea>
 
                 <h5 id="stepDay5" class="small-label"></h5>
-                <textarea id="step5" class="create-form-input display-none" name="step" rows="3" placeholder="５個目のステップを入力してください"></textarea>
+                <textarea id="inputStep5" class="create-form-input display-none" name="step" rows="3" placeholder="５個目のステップを入力してください"></textarea>
 
                 <h5 id="stepDay6" class="small-label"></h5>
-                <textarea id="step6" class="create-form-input display-none" name="step" rows="3" placeholder="６個目のステップを入力してください"></textarea>
+                <textarea id="inputStep6" class="create-form-input display-none" name="step" rows="3" placeholder="６個目のステップを入力してください"></textarea>
                 
                 <h5 id="stepDay7" class="small-label"></h5>
-                <textarea id="step7" class="create-form-input display-none" name="step" rows="3" placeholder="７個目のステップを入力してください"></textarea>
+                <textarea id="inputStep7" class="create-form-input display-none" name="step" rows="3" placeholder="７個目のステップを入力してください"></textarea>
                 
                 <h5 id="stepDay8" class="small-label"></h5>
-                <textarea id="step8" class="create-form-input display-none" name="step" rows="3" placeholder="８個目のステップを入力してください"></textarea>
+                <textarea id="inputStep8" class="create-form-input display-none" name="step" rows="3" placeholder="８個目のステップを入力してください"></textarea>
                 
                 <h5 id="stepDay9" class="small-label"></h5>
-                <textarea id="step9" class="create-form-input display-none" name="step" rows="3" placeholder="９個目のステップを入力してください"></textarea>
+                <textarea id="inputStep9" class="create-form-input display-none" name="step" rows="3" placeholder="９個目のステップを入力してください"></textarea>
                 
                 <h5 id="stepDay10" class="small-label"></h5>
-                <textarea id="step10" class="create-form-input display-none" name="step" rows="3" placeholder="１０個目のステップを入力してください"></textarea>
+                <textarea id="inputStep10" class="create-form-input display-none" name="step" rows="3" placeholder="１０個目のステップを入力してください"></textarea>
             
             </div>
 
@@ -166,8 +167,8 @@
 
                 <h5 class="mgt-2">重要度</h5>
                 <h6>※1~10の数値を選択してください</h6>
-                <select name="how_important" >
-                    <option value="1">1 重要でない</option>
+                <select id="selectImportant" name="how_important" >
+                    <option value="1">1 あまり重要でない</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -188,7 +189,7 @@
 
                 <h5 class="mgt-2">緊急度</h5>
                 <h6>※1~10の数値を選択してください</h6>
-                <select name="how_urgent" >
+                <select id="selectUrgent" name="how_urgent" >
                     <option value="1">1 緊急でない</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -225,7 +226,7 @@
                     <h5 id="errorWhat" class="each-error">※目標が未入力です</h5>
                     <h5 id="errorWhy" class="each-error">※理由が未入力です</h5>
                     <h5 id="errorWhen" class="each-error">※期日が選択されていません</h5>
-                    <h5 id="errorStep" class="each-error">※ステップが未入力です</h5>
+                    <h5 id="errorStep" class="each-error">※ステップ１が未入力です</h5>
                 </div>
 
                 <h4>＜目標＞</h4>
@@ -262,13 +263,15 @@
                 <br>
 
                 <h4>＜緊急度＞</h4>
-                <h4 id="confirmUrgent">２</h4>
+                <h4 id="confirmUrgent">１</h4>
+
+                <h5 class="mgt-2 submit-message">入力が完了したら右下の送信ボタンを押して登録を完了してください。</h5>
             
             </div>
 
             <div class="btn-bar">
                 <button type="button" class="small-btn" id="prevBtn6">◁prev</button>
-                <button type="button" class="small-btn small-btn__submit">submit</button>
+                <button type="submit" class="small-btn small-btn__submit">submit</button>
             </div>
 
         </div>
