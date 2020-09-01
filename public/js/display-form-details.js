@@ -7,9 +7,47 @@ $(function(){
   let when;
   let whenY;
   let whenM;
-  let whenD
+  let whenD;
 
-  $("#inputWhen").blur(howManyDaysLeft);
+  let inputWhy1 = "";
+  let inputWhy2 = "";
+  let inputWhy3 = "";
+  let inputWhy4 = "";
+  let inputWhy5 = "";
+
+
+  $('#inputWhat').blur(function(e) {
+    checkError("what");
+  });
+
+  $('#inputWhen').blur(function(e) {
+    howManyDaysLeft();
+  });
+
+  $('#inputWhy1').blur(function(e) {
+    inputWhy1 = $("#inputWhy1").val();
+    checkError("why1");
+  });
+
+  $('#inputWhy2').blur(function(e) {
+    inputWhy2 = $("#inputWhy2").val();
+    checkError("why2");
+  });
+
+  $('#inputWhy3').blur(function(e) {
+    inputWhy3 = $("#inputWhy3").val();
+    checkError("why3");
+  });
+
+  $('#inputWhy4').blur(function(e) {
+    inputWhy4 = $("#inputWhy4").val();
+    checkError("why4");
+  });
+
+  $('#inputWhy5').blur(function(e) {
+    inputWhy5 = $("#inputWhy5").val();
+    checkError("why5");
+  });
 
   // 今日から目標達成日までの日数を計算
   function howManyDaysLeft() {
@@ -29,7 +67,8 @@ $(function(){
     if(isNaN(daysLeft)){
 
       $('#howManyDays').css("display", "inline-block");
-      $('#howManyDays').text("有効な日付が選択されていません");
+      $('#howManyDays').text("※有効な日付が選択されていません");
+      checkError("when");
 
     }else if(daysLeft > 0){
 
@@ -37,11 +76,13 @@ $(function(){
       $('#howManyDays').text(`${whenY} / ${whenM} / ${whenD} まで残り ${daysLeft} 日`);
       
       displayStepDays();
+      checkError("when");
 
     }else{
 
       $('#howManyDays').css("display", "inline-block");
-      $('#howManyDays').text("有効な日付が選択されていません");
+      $('#howManyDays').text("※有効な日付が選択されていません");
+      checkError("when");
 
     }
 
@@ -533,6 +574,108 @@ $(function(){
     $('#stepDay8').text("");
     $('#stepDay9').text("");
     $('#stepDay10').text("");
+
+  }
+
+
+  function checkError(form) {
+
+    if(form === "what"){
+
+      let inputWhat = $("#inputWhat").val();
+
+      if(inputWhat === ""){
+
+        $('#errorWhat').text("※目標が未入力です");
+        $('#confirmWhat').text("");
+
+      }else{
+
+        $('#errorWhat').text("");
+
+        $('#confirmWhat').text(inputWhat);
+        
+      }
+
+    }else if(form === "when"){
+
+      if(isNaN(daysLeft)){
+
+        $('#errorWhen').text("※有効な日付が選択されていません");
+        $('#confirmWhen').text("");
+  
+      }else if(daysLeft > 0){
+  
+        $('#errorWhen').text("");
+        $('#confirmWhen').text(`${whenY} / ${whenM} / ${whenD} （${daysLeft} 日後）`);
+  
+      }else{
+  
+        $('#errorWhen').text("※有効な日付が選択されていません");
+        $('#confirmWhen').text("");
+  
+      }
+    
+    }else if(form === "why1"){
+
+      checkWhy();
+      if(inputWhy1 === ""){
+        $('#confirmWhy1').text("");
+      }else{
+        $('#confirmWhy1').text(`・${inputWhy1}`);
+      }
+      
+    }else if(form === "why2"){
+
+      checkWhy();
+      if(inputWhy2 === ""){
+        $('#confirmWhy2').text("");
+      }else{
+        $('#confirmWhy2').text(`・${inputWhy2}`);
+      }
+
+    }else if(form === "why3"){
+
+      checkWhy();
+      if(inputWhy3 === ""){
+        $('#confirmWhy3').text("");
+      }else{
+        $('#confirmWhy3').text(`・${inputWhy3}`);
+      }
+
+    }else if(form === "why4"){
+
+      checkWhy();
+      if(inputWhy4 === ""){
+        $('#confirmWhy4').text("");
+      }else{
+        $('#confirmWhy4').text(`・${inputWhy4}`);
+      }
+
+    }else if(form === "why5"){
+
+      checkWhy();
+      if(inputWhy5 === ""){
+        $('#confirmWhy5').text("");
+      }else{
+        $('#confirmWhy5').text(`・${inputWhy5}`);
+      }
+
+    }
+  }
+
+  // 理由の入力欄が全て未入力ではないことを確認
+  function checkWhy() {
+
+    if(inputWhy1 === "" && inputWhy2 === "" && inputWhy3 === "" && inputWhy4 === "" && inputWhy5 === ""){
+
+      $('#errorWhy').text("※理由が未入力です");
+
+    }else{
+
+      $('#errorWhy').text("");
+
+    }
 
   }
 

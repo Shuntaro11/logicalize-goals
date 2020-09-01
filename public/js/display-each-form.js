@@ -55,7 +55,7 @@ $(function(){
   $("#nextBtn3").on('click', function(e) {
 
     $("#whenForm").css("display", "none");
-    $("#howMuchForm").css("display", "block");
+    $("#stepForm").css("display", "block");
 
     $("#markNumber3").css("background", "rgba(255, 255, 255, 0.3)");
     $("#markNumber3").css("box-shadow", "none");
@@ -67,7 +67,7 @@ $(function(){
 
   $("#prevBtn4").on('click', function(e) {
 
-    $("#howMuchForm").css("display", "none");
+    $("#stepForm").css("display", "none");
     $("#whenForm").css("display", "block");
 
     $("#markNumber3").css("background", "white");
@@ -80,8 +80,8 @@ $(function(){
 
   $("#nextBtn4").on('click', function(e) {
 
-    $("#howMuchForm").css("display", "none");
-    $("#stepForm").css("display", "block");
+    $("#stepForm").css("display", "none");
+    $("#howMuchForm").css("display", "block");
 
     $("#markNumber4").css("background", "rgba(255, 255, 255, 0.3)");
     $("#markNumber4").css("box-shadow", "none");
@@ -93,8 +93,8 @@ $(function(){
 
   $("#prevBtn5").on('click', function(e) {
 
-    $("#stepForm").css("display", "none");
-    $("#howMuchForm").css("display", "block");
+    $("#howMuchForm").css("display", "none");
+    $("#stepForm").css("display", "block");
 
     $("#markNumber4").css("background", "white");
     $("#markNumber4").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
@@ -106,14 +106,27 @@ $(function(){
 
   $("#nextBtn5").on('click', function(e) {
 
-    $("#stepForm").css("display", "none");
-    // $("#confirmForm").css("display", "block");
+    $("#howMuchForm").css("display", "none");
+    $("#confirmForm").css("display", "block");
 
     $("#markNumber5").css("background", "rgba(255, 255, 255, 0.3)");
     $("#markNumber5").css("box-shadow", "none");
 
     $("#markNumber6").css("background", "white");
     $("#markNumber6").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+
+  });
+
+  $("#prevBtn6").on('click', function(e) {
+
+    $("#confirmForm").css("display", "none");
+    $("#howMuchForm").css("display", "block");
+
+    $("#markNumber5").css("background", "white");
+    $("#markNumber5").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+
+    $("#markNumber6").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber6").css("box-shadow", "none");
 
   });
 
