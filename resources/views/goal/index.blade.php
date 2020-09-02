@@ -4,9 +4,9 @@
 
 @section('content')
 
-<div class="top-container">
+@include("header")
+<div class="main-container">
 
-  @include("header")
   <a href="/goals/create">
     <button class="btn add-goal-btn" type="button">Add new goal</button>
   </a>
@@ -16,7 +16,7 @@
   <div class="goal-index">
 
     @foreach($goals as $goal)
-      <a href="/goals/create/{{ $goal->id }}" class="goal-link">{{ $goal->what }}</a>
+      <a href="/goals/{{ $goal->id }}" class="goal-link">{{ $goal->what }}</a>
     @endforeach
     
   </div>

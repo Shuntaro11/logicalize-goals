@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include("gest-header")
+
 <div class="register-container">
 
     <div class="background-image"></div>

@@ -12,9 +12,8 @@
 
 @section('content')
 
+@include("header")
 <div class="create-container">
-
-    @include("header")
 
     <div class="number-vav-bar">
         <p class="mark-number mark-number__first" id="markNumber1">1</p>

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="top-container">
+<div class="main-container">
 
   <div class="background-image"></div>
     <div class="main-text">Organize the goals in your head!!</div>
@@ -15,7 +15,7 @@
         <button class="btn" type="button">{{ __('Login') }}</button>
       </a>
     </div>
-    
+
     <div>
       <a href="{{ route('register') }}">
         <button class="btn" type="button">{{ __('Register') }}</button>
