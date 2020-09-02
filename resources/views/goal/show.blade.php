@@ -24,24 +24,39 @@
     <div class="small-container small-container__show">
       <h3 class="middle-title">How</h3>
       <div class="steps-index">
-        @for($i = 0; $i < $howManySteps; $i++)
-          <h4>{{ $stepDays[$i] }}</h4>
-          <h4 class="each-reason">
-            {{ $steps[$i]->step }}
-            <div class="complete-box">
-            <complete-step
-              :step-id="{{ json_encode($steps[$i]->id) }}"
-              :default-Completed="{{ json_encode($defaultCompleted[$i]) }}"
-            ></complete-step>
-        </div>
-          </h4><br>
-        @endfor
+        @if($goal->achievement === 0)
+
+            @for($i = 0; $i < $howManySteps; $i++)
+              <h4>{{ $stepDays[$i] }}</h4>
+              <h4 class="each-reason">
+                {{ $steps[$i]->step }}
+                <complete-step
+                  :step-id="{{ json_encode($steps[$i]->id) }}"
+                  :default-Completed="{{ json_encode($defaultCompleted[$i]) }}"
+                ></complete-step>
+              </h4><br>
+            @endfor
+
+        @else
+
+            @for($i = 0; $i < $howManySteps; $i++)
+              <h4>{{ $stepDays[$i] }}</h4>
+              <h4 class="each-reason">
+                {{ $steps[$i]->step }}
+              </h4><br>
+            @endfor
+
+        @endif
       </div>
-      <a href="/">
-        <button type="button" class="btn btn__achievement">
-          Achievement
-        </button>
-      </a>
+      @if($goal->achievement === 0)
+
+        <a href="/">
+          <button type="button" class="btn btn__achievement">
+            Achievement
+          </button>
+        </a>
+
+      @endif
     </div>
 
   </div>
