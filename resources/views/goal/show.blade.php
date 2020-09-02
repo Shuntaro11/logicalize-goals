@@ -24,14 +24,17 @@
     <div class="small-container small-container__show">
       <h3 class="middle-title">How</h3>
       <div class="steps-index">
-        @foreach($steps as $step)
-          <h4>2020/12/02まで</h4>
+        @for($i = 0; $i < $howManySteps; $i++)
+          <h4>{{ $stepDays[$i] }}</h4>
           <h4 class="each-reason">
-            {{ $step->step }}
+            {{ $steps[$i]->step }}
             <button class="ok-btn"></button>
           </h4><br>
-        @endforeach
+        @endfor
       </div>
+      <button type="button" class="btn btn__achievement">
+        Achievement
+      </button>
     </div>
 
   </div>
