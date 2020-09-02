@@ -19,7 +19,7 @@ class GoalController extends Controller
     public function index()
     {
 
-        $goals = Auth::user()->goals()->latest()->get();
+        $goals = Auth::user()->goals()->where('achievement', 0)->latest()->get();
         return view('goal.index', compact('goals'));
         
     }
@@ -164,6 +164,24 @@ class GoalController extends Controller
         $goals = Auth::user()->goals()->latest()->get();
         return view('goal.index', compact('goals'));
         
+    }
+
+    public function achieve($id)
+    {
+        $goal = Goal::find($id);
+
+        if($goal->achievement === 0){
+
+            $goal->achievement = 1;
+            $goal->save();
+
+            return redirect('/');
+
+        }else{
+
+            return redirect('/');
+
+        }
     }
 
 }

@@ -15,4 +15,6 @@ Route::get('/', 'TopController@index')->name('top');
 
 Auth::routes();
 
+Route::get('/goals/{goal}/achieve', 'GoalController@achieve');
+
 Route::resource('goals', 'GoalController');

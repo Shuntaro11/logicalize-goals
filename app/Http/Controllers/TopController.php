@@ -12,7 +12,7 @@ class TopController extends Controller
     {
         if ( Auth::check() ) {
 
-            $goals = Auth::user()->goals()->latest()->get();
+            $goals = Auth::user()->goals()->where('achievement', 0)->latest()->get();
             return view('goal.index', compact('goals'));
 
         }else{

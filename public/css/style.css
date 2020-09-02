@@ -125,6 +125,20 @@ select{
   margin-top: 20px;
 }
 
+.btn__achieved{
+  background: #ffb236;
+  margin: 20px auto 0;
+  box-shadow: none;
+  cursor: default;
+  color: #2c2c2c;
+  border-radius: 3px;
+}
+
+.btn__achieved:hover{
+  background: #ffb236;
+  box-shadow: none;
+}
+
 .btn__achievement:hover{
   background: #4fcf48;
 }
