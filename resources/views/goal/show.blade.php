@@ -50,11 +50,17 @@
       </div>
       @if($goal->achievement === 0)
 
-        <a href="/">
+        <a method="get" href="/goals/{{ $goal->id }}/achieve">
           <button type="button" class="btn btn__achievement">
             Achievement
           </button>
         </a>
+      
+      @else
+
+        <div class="btn btn__achieved">
+          Achieved!!
+        </div>
 
       @endif
     </div>

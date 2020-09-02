@@ -166,4 +166,22 @@ class GoalController extends Controller
         
     }
 
+    public function achieve($id)
+    {
+        $goal = Goal::find($id);
+
+        if($goal->achievement === 0){
+
+            $goal->achievement = 1;
+            $goal->save();
+
+            return redirect('/');
+
+        }else{
+
+            return redirect('/');
+
+        }
+    }
+
 }
