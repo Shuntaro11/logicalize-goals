@@ -16,7 +16,7 @@
   <div class="goal-index">
 
     @foreach($goals as $goal)
-      <a href="/goals/{{ $goal->id }}" class="goal-link">{{ $goal->what }}</a>
+      <a href="{{ route('goals.show', $goal->id) }}" class="goal-link">{{ $goal->what }}</a>
     @endforeach
     
   </div>
