@@ -24,15 +24,47 @@ class GoalController extends Controller
         
     }
 
-    public function show($id)
+    public function show(Goal $goal)
     {
-        $goal = Goal::find($id);
         $auth = Auth::user();
 
         if($goal->user_id === $auth->id){
+
             $steps = $goal->steps()->get();
             $reasons = $goal->reasons()->get();
-            return view('goal.show', compact('auth', 'reasons', 'steps'));
+
+            $howManySteps = count($steps);
+            
+            $startDay = new Carbon($goal->create_at);
+            $finishDay = new Carbon($goal->when);
+            
+            // スタートから達成までの日数
+            $totalDay = $startDay->diffInDays($finishDay);
+
+            // １ステップ分の日数
+            $oneStepDay = floor($totalDay / $howManySteps);
+
+            // ステップごとの日付を配列に代入
+            $stepDays = [];
+            for($i = 0; $i < $howManySteps; $i++){
+                $stepDate = $startDay->addDays($oneStepDay);
+                $stepDay = $stepDate->format('Y / m / d');   //←ここで変換しないでCarbonのままだと予期しない動きになる
+                array_push($stepDays, $stepDay);
+            }
+
+            // Vue.jsで各ステップが達成済みか判断するための変数を定義
+            $defaultCompleted = [];
+            foreach ($steps as $step) {
+
+                if($step->achievement === 0){
+                    array_push($defaultCompleted, false);
+                } else {
+                    array_push($defaultCompleted, true);
+                }
+            }
+
+            return view('goal.show', compact('auth', 'goal', 'reasons', 'howManySteps', 'steps', 'stepDays', 'defaultCompleted'));
+
         }else{
 
             return redirect('/');

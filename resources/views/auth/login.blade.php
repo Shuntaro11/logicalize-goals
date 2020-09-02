@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 @include("gest-header")
 
 <div class="register-container">
@@ -36,7 +37,7 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn">
                 Login
             </button>
         

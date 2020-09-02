@@ -12,9 +12,8 @@
 
 @section('content')
 
+@include("header")
 <div class="create-container">
-
-    @include("header")
 
     <div class="number-vav-bar">
         <p class="mark-number mark-number__first" id="markNumber1">1</p>
@@ -272,7 +271,7 @@
 
             <div class="btn-bar">
                 <button type="button" class="small-btn" id="prevBtn6">◁prev</button>
-                <button type="submit" class="small-btn small-btn__submit">submit</button>
+                <button type="submit" class="small-btn small-btn__submit">Submit</button>
             </div>
 
         </div>

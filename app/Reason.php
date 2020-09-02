@@ -10,8 +10,7 @@ class Reason extends Model
         'reason', 'goal_id',
     ];
 
-    public function goal()
-    {
-        return $this->belongsTo(\App\Goal::class, 'goal_id', 'id');
+    public function goal(){
+        return $this->belongsTo('App\Goal');
     }
 }
