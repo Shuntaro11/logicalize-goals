@@ -30,9 +30,11 @@ class GoalController extends Controller
         $auth = Auth::user();
 
         if($goal->user_id === $auth->id){
+
             $steps = $goal->steps()->get();
             $reasons = $goal->reasons()->get();
-            return view('goal.show', compact('auth', 'reasons', 'steps'));
+            return view('goal.show', compact('auth', 'goal', 'reasons', 'steps'));
+
         }else{
 
             return redirect('/');
