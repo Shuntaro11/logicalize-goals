@@ -28,13 +28,20 @@
           <h4>{{ $stepDays[$i] }}</h4>
           <h4 class="each-reason">
             {{ $steps[$i]->step }}
-            <button class="ok-btn"></button>
+            <div class="complete-box">
+            <complete-step
+              :step-id="{{ json_encode($steps[$i]->id) }}"
+              :default-Completed="{{ json_encode($defaultCompleted[$i]) }}"
+            ></complete-step>
+        </div>
           </h4><br>
         @endfor
       </div>
-      <button type="button" class="btn btn__achievement">
-        Achievement
-      </button>
+      <a href="/">
+        <button type="button" class="btn btn__achievement">
+          Achievement
+        </button>
+      </a>
     </div>
 
   </div>

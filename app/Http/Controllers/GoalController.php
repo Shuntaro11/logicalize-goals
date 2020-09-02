@@ -52,7 +52,18 @@ class GoalController extends Controller
                 array_push($stepDays, $stepDay);
             }
 
-            return view('goal.show', compact('auth', 'goal', 'reasons', 'howManySteps', 'steps', 'stepDays'));
+            // Vue.jsで各ステップが達成済みか判断するための変数を定義
+            $defaultCompleted = [];
+            foreach ($steps as $step) {
+
+                if($step->achievement === 0){
+                    array_push($defaultCompleted, false);
+                } else {
+                    array_push($defaultCompleted, true);
+                }
+            }
+
+            return view('goal.show', compact('auth', 'goal', 'reasons', 'howManySteps', 'steps', 'stepDays', 'defaultCompleted'));
 
         }else{
 
