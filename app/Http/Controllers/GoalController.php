@@ -18,9 +18,33 @@ class GoalController extends Controller
 
     public function index()
     {
+        $q = \Request::query();
 
-        $goals = Auth::user()->goals()->where('achievement', 0)->latest()->get();
-        return view('goal.index', compact('goals'));
+        if(isset($q['name'])){
+
+
+            if($q['name'] === 'inportance'){
+
+                $goals = Auth::user()->goals()->where('achievement', 0)->orderBy('how_important','desc')->get();
+
+            }else if($q['name'] === 'urgent'){
+
+                $goals = Auth::user()->goals()->where('achievement', 0)->orderBy('how_urgent','desc')->get();
+
+            }else if($q['name'] === 'when'){
+
+                $goals = Auth::user()->goals()->where('achievement', 0)->orderBy('when','asc')->get();
+
+            }
+
+            return view('goal.index', compact('goals'));
+
+        }else {
+
+            $goals = Auth::user()->goals()->where('achievement', 0)->latest()->get();
+            return view('goal.index', compact('goals'));
+
+        }
         
     }
 
