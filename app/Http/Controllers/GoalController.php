@@ -87,7 +87,10 @@ class GoalController extends Controller
                 }
             }
 
-            return view('goal.show', compact('auth', 'goal', 'reasons', 'howManySteps', 'steps', 'stepDays', 'defaultCompleted'));
+            $today = new Carbon();
+            $leftDay = $today->diffInDays($finishDay);
+
+            return view('goal.show', compact('auth', 'goal', 'reasons', 'howManySteps', 'steps', 'stepDays', 'defaultCompleted', 'today', 'leftDay'));
 
         }else{
 
