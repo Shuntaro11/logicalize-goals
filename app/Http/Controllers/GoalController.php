@@ -42,7 +42,16 @@ class GoalController extends Controller
         }else {
 
             $goals = Auth::user()->goals()->where('achievement', 0)->latest()->get();
-            return view('goal.index', compact('goals'));
+
+            if(count($goals) != 0){
+
+                return view('goal.index', compact('goals'));
+
+            }else{
+                
+                $today = Carbon::now()->format('Y-m-d');
+                return view('goal.create', compact('today'));
+            }
 
         }
         
