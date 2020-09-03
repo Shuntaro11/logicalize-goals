@@ -261,6 +261,10 @@ select{
   z-index: 1000;
 }
 
+.header-scroll{
+  background: rgba(255, 255, 255, 0.3);
+}
+
 .nav-link{
   margin-right: 10px;
   height: 35px;

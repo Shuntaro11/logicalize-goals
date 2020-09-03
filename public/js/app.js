@@ -49831,6 +49831,14 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./display-each-form */ "./resources/js/display-each-form.js");
+
+__webpack_require__(/*! ./display-form-details */ "./resources/js/display-form-details.js");
+
+__webpack_require__(/*! ./header */ "./resources/js/header.js");
+
+__webpack_require__(/*! ./pull-down */ "./resources/js/pull-down.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -50036,6 +50044,1037 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/display-each-form.js":
+/*!*******************************************!*\
+  !*** ./resources/js/display-each-form.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $("#nextBtn1").on('click', function (e) {
+    $("#whatForm").css("display", "none");
+    $("#whyForm").css("display", "block");
+    $("#markNumber1").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber1").css("box-shadow", "none");
+    $("#markNumber2").css("background", "white");
+    $("#markNumber2").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+  });
+  $("#prevBtn2").on('click', function (e) {
+    $("#whyForm").css("display", "none");
+    $("#whatForm").css("display", "block");
+    $("#markNumber1").css("background", "white");
+    $("#markNumber1").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+    $("#markNumber2").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber2").css("box-shadow", "none");
+  });
+  $("#nextBtn2").on('click', function (e) {
+    $("#whyForm").css("display", "none");
+    $("#whenForm").css("display", "block");
+    $("#markNumber2").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber2").css("box-shadow", "none");
+    $("#markNumber3").css("background", "white");
+    $("#markNumber3").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+  });
+  $("#prevBtn3").on('click', function (e) {
+    $("#whenForm").css("display", "none");
+    $("#whyForm").css("display", "block");
+    $("#markNumber2").css("background", "white");
+    $("#markNumber2").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+    $("#markNumber3").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber3").css("box-shadow", "none");
+  });
+  $("#nextBtn3").on('click', function (e) {
+    $("#whenForm").css("display", "none");
+    $("#stepForm").css("display", "block");
+    $("#markNumber3").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber3").css("box-shadow", "none");
+    $("#markNumber4").css("background", "white");
+    $("#markNumber4").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+  });
+  $("#prevBtn4").on('click', function (e) {
+    $("#stepForm").css("display", "none");
+    $("#whenForm").css("display", "block");
+    $("#markNumber3").css("background", "white");
+    $("#markNumber3").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+    $("#markNumber4").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber4").css("box-shadow", "none");
+  });
+  $("#nextBtn4").on('click', function (e) {
+    $("#stepForm").css("display", "none");
+    $("#howMuchForm").css("display", "block");
+    $("#markNumber4").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber4").css("box-shadow", "none");
+    $("#markNumber5").css("background", "white");
+    $("#markNumber5").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+  });
+  $("#prevBtn5").on('click', function (e) {
+    $("#howMuchForm").css("display", "none");
+    $("#stepForm").css("display", "block");
+    $("#markNumber4").css("background", "white");
+    $("#markNumber4").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+    $("#markNumber5").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber5").css("box-shadow", "none");
+  });
+  $("#nextBtn5").on('click', function (e) {
+    $("#howMuchForm").css("display", "none");
+    $("#confirmForm").css("display", "block");
+    $("#markNumber5").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber5").css("box-shadow", "none");
+    $("#markNumber6").css("background", "white");
+    $("#markNumber6").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+  });
+  $("#prevBtn6").on('click', function (e) {
+    $("#confirmForm").css("display", "none");
+    $("#howMuchForm").css("display", "block");
+    $("#markNumber5").css("background", "white");
+    $("#markNumber5").css("box-shadow", "0 5px 14px 0 rgba(0,0,0,.3)");
+    $("#markNumber6").css("background", "rgba(255, 255, 255, 0.3)");
+    $("#markNumber6").css("box-shadow", "none");
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/display-form-details.js":
+/*!**********************************************!*\
+  !*** ./resources/js/display-form-details.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  var howManySteps = "1";
+  var daysLeft = 0;
+  var when;
+  var whenY;
+  var whenM;
+  var whenD;
+  var inputWhy1 = "";
+  var inputWhy2 = "";
+  var inputWhy3 = "";
+  var inputWhy4 = "";
+  var inputWhy5 = "";
+  var inputStep1 = "";
+  var inputStep2 = "";
+  var inputStep3 = "";
+  var inputStep4 = "";
+  var inputStep5 = "";
+  var inputStep6 = "";
+  var inputStep7 = "";
+  var inputStep8 = "";
+  var inputStep9 = "";
+  var inputStep10 = ""; // 目標が入力されたら発火
+
+  $('#inputWhat').blur(function (e) {
+    checkError("what");
+  }); // 時期が設定されたら発火
+
+  $('#inputWhen').blur(function (e) {
+    howManyDaysLeft();
+  }); // 理由が入力されたら発火
+
+  $('#inputWhy1').blur(function (e) {
+    inputWhy1 = $("#inputWhy1").val();
+    checkError("why1");
+  });
+  $('#inputWhy2').blur(function (e) {
+    inputWhy2 = $("#inputWhy2").val();
+    checkError("why2");
+  });
+  $('#inputWhy3').blur(function (e) {
+    inputWhy3 = $("#inputWhy3").val();
+    checkError("why3");
+  });
+  $('#inputWhy4').blur(function (e) {
+    inputWhy4 = $("#inputWhy4").val();
+    checkError("why4");
+  });
+  $('#inputWhy5').blur(function (e) {
+    inputWhy5 = $("#inputWhy5").val();
+    checkError("why5");
+  }); // ステップが入力されたら発火
+
+  $('#inputStep1').blur(function (e) {
+    inputStep1 = $("#inputStep1").val();
+    checkError("step1");
+  });
+  $('#inputStep2').blur(function (e) {
+    inputStep2 = $("#inputStep2").val();
+    checkError("step2");
+  });
+  $('#inputStep3').blur(function (e) {
+    inputStep3 = $("#inputStep3").val();
+    checkError("step3");
+  });
+  $('#inputStep4').blur(function (e) {
+    inputStep4 = $("#inputStep4").val();
+    checkError("step4");
+  });
+  $('#inputStep5').blur(function (e) {
+    inputStep5 = $("#inputStep5").val();
+    checkError("step5");
+  });
+  $('#inputStep6').blur(function (e) {
+    inputStep6 = $("#inputStep6").val();
+    checkError("step6");
+  });
+  $('#inputStep7').blur(function (e) {
+    inputStep7 = $("#inputStep7").val();
+    checkError("step7");
+  });
+  $('#inputStep8').blur(function (e) {
+    inputStep8 = $("#inputStep8").val();
+    checkError("step8");
+  });
+  $('#inputStep9').blur(function (e) {
+    inputStep9 = $("#inputStep9").val();
+    checkError("step9");
+  });
+  $('#inputStep10').blur(function (e) {
+    inputStep10 = $("#inputStep10").val();
+    checkError("step10");
+  }); // 重要度を確認画面に表示
+
+  $('#selectImportant').change(function (e) {
+    var selectImportant = $("#selectImportant").val();
+
+    switch (selectImportant) {
+      case "1":
+        $('#confirmImportant').text("１");
+        break;
+
+      case "2":
+        $('#confirmImportant').text("２");
+        break;
+
+      case "3":
+        $('#confirmImportant').text("３");
+        break;
+
+      case "4":
+        $('#confirmImportant').text("４");
+        break;
+
+      case "5":
+        $('#confirmImportant').text("５");
+        break;
+
+      case "6":
+        $('#confirmImportant').text("６");
+        break;
+
+      case "7":
+        $('#confirmImportant').text("７");
+        break;
+
+      case "8":
+        $('#confirmImportant').text("８");
+        break;
+
+      case "9":
+        $('#confirmImportant').text("９");
+        break;
+
+      case "10":
+        $('#confirmImportant').text("１０");
+        break;
+
+      default:
+        break;
+    }
+  }); // 緊急度を確認画面に表示
+
+  $('#selectUrgent').change(function (e) {
+    var selectUrgent = $("#selectUrgent").val();
+
+    switch (selectUrgent) {
+      case "1":
+        $('#confirmUrgent').text("１");
+        break;
+
+      case "2":
+        $('#confirmUrgent').text("２");
+        break;
+
+      case "3":
+        $('#confirmUrgent').text("３");
+        break;
+
+      case "4":
+        $('#confirmUrgent').text("４");
+        break;
+
+      case "5":
+        $('#confirmUrgent').text("５");
+        break;
+
+      case "6":
+        $('#confirmUrgent').text("６");
+        break;
+
+      case "7":
+        $('#confirmUrgent').text("７");
+        break;
+
+      case "8":
+        $('#confirmUrgent').text("８");
+        break;
+
+      case "9":
+        $('#confirmUrgent').text("９");
+        break;
+
+      case "10":
+        $('#confirmUrgent').text("１０");
+        break;
+
+      default:
+        break;
+    }
+  }); // 今日から目標達成日までの日数を計算
+
+  function howManyDaysLeft() {
+    var inputWhen = $("#inputWhen").val();
+    when = new Date(inputWhen);
+    whenY = when.getFullYear();
+    whenM = when.getMonth() + 1;
+    whenD = when.getDate();
+    var today = new Date();
+    daysLeft = Math.floor((when - today) / 86400000);
+
+    if (isNaN(daysLeft)) {
+      $('#howManyDays').css("display", "inline-block");
+      $('#howManyDays').text("※有効な日付が選択されていません");
+      checkError("when");
+    } else if (daysLeft > 0) {
+      $('#howManyDays').css("display", "inline-block");
+      $('#howManyDays').text("".concat(whenY, " / ").concat(whenM, " / ").concat(whenD, " \u307E\u3067\u6B8B\u308A ").concat(daysLeft, " \u65E5"));
+      displayStepDays();
+      checkError("when");
+    } else {
+      $('#howManyDays').css("display", "inline-block");
+      $('#howManyDays').text("※有効な日付が選択されていません");
+      checkError("when");
+    }
+  } // ステップを入力するためのinputタグを,選択した数表示する
+
+
+  $('#howManySteps').change(function () {
+    howManySteps = $('#howManySteps').val();
+    displayStepDays();
+
+    if (howManySteps === "1") {
+      $('#inputStep2').val('');
+      $('#inputStep3').val('');
+      $('#inputStep4').val('');
+      $('#inputStep5').val('');
+      $('#inputStep6').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
+      $('#inputStep2').css("display", "none");
+      $('#inputStep3').css("display", "none");
+      $('#inputStep4').css("display", "none");
+      $('#inputStep5').css("display", "none");
+      $('#inputStep6').css("display", "none");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
+    } else if (howManySteps === "2") {
+      $('#inputStep3').val('');
+      $('#inputStep4').val('');
+      $('#inputStep5').val('');
+      $('#inputStep6').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "none");
+      $('#inputStep4').css("display", "none");
+      $('#inputStep5').css("display", "none");
+      $('#inputStep6').css("display", "none");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
+    } else if (howManySteps === "3") {
+      $('#inputStep4').val('');
+      $('#inputStep5').val('');
+      $('#inputStep6').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "none");
+      $('#inputStep5').css("display", "none");
+      $('#inputStep6').css("display", "none");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
+    } else if (howManySteps === "4") {
+      $('#inputStep5').val('');
+      $('#inputStep6').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "none");
+      $('#inputStep6').css("display", "none");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
+    } else if (howManySteps === "5") {
+      $('#inputStep6').val('');
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "none");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
+    } else if (howManySteps === "6") {
+      $('#inputStep7').val('');
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "inline-block");
+      $('#inputStep7').css("display", "none");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
+    } else if (howManySteps === "7") {
+      $('#inputStep8').val('');
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "inline-block");
+      $('#inputStep7').css("display", "inline-block");
+      $('#inputStep8').css("display", "none");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
+    } else if (howManySteps === "8") {
+      $('#inputStep9').val('');
+      $('#inputStep10').val('');
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "inline-block");
+      $('#inputStep7').css("display", "inline-block");
+      $('#inputStep8').css("display", "inline-block");
+      $('#inputStep9').css("display", "none");
+      $('#inputStep10').css("display", "none");
+    } else if (howManySteps === "9") {
+      $('#inputStep10').val('');
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "inline-block");
+      $('#inputStep7').css("display", "inline-block");
+      $('#inputStep8').css("display", "inline-block");
+      $('#inputStep9').css("display", "inline-block");
+      $('#inputStep10').css("display", "none");
+    } else if (howManySteps === "10") {
+      $('#inputStep2').css("display", "inline-block");
+      $('#inputStep3').css("display", "inline-block");
+      $('#inputStep4').css("display", "inline-block");
+      $('#inputStep5').css("display", "inline-block");
+      $('#inputStep6').css("display", "inline-block");
+      $('#inputStep7').css("display", "inline-block");
+      $('#inputStep8').css("display", "inline-block");
+      $('#inputStep9').css("display", "inline-block");
+      $('#inputStep10').css("display", "inline-block");
+    }
+  });
+
+  function displayStepDays() {
+    if (isNaN(daysLeft)) {
+      resetStepDays();
+      return;
+    } else if (daysLeft < 1) {
+      resetStepDays();
+      return;
+    }
+
+    if (howManySteps === "1") {
+      $('#stepDay1').text("\uFF11 / \uFF11 step : ".concat(whenY, " / ").concat(whenM, " / ").concat(whenD, " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay2').text("");
+      $('#stepDay3').text("");
+      $('#stepDay4').text("");
+      $('#stepDay5').text("");
+      $('#stepDay6').text("");
+      $('#stepDay7').text("");
+      $('#stepDay8').text("");
+      $('#stepDay9').text("");
+      $('#stepDay10').text("");
+    } else if (howManySteps === "2") {
+      var stepDaysFor = Math.floor(daysLeft / 2);
+      var stepDay1 = new Date();
+      var stepDay2 = new Date();
+      stepDay1.setDate(stepDay1.getDate() + stepDaysFor);
+      stepDay2.setDate(stepDay2.getDate() + stepDaysFor * 2);
+      $('#stepDay1').text("\uFF11 / \uFF12 step : ".concat(stepDay1.getFullYear(), " / ").concat(stepDay1.getMonth() + 1, " / ").concat(stepDay1.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay2').text("\uFF12 / \uFF12 step : ".concat(stepDay2.getFullYear(), " / ").concat(stepDay2.getMonth() + 1, " / ").concat(stepDay2.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay3').text("");
+      $('#stepDay4').text("");
+      $('#stepDay5').text("");
+      $('#stepDay6').text("");
+      $('#stepDay7').text("");
+      $('#stepDay8').text("");
+      $('#stepDay9').text("");
+      $('#stepDay10').text("");
+    } else if (howManySteps === "3") {
+      var _stepDaysFor = Math.floor(daysLeft / 3);
+
+      var _stepDay = new Date();
+
+      var _stepDay2 = new Date();
+
+      var stepDay3 = new Date();
+
+      _stepDay.setDate(_stepDay.getDate() + _stepDaysFor);
+
+      _stepDay2.setDate(_stepDay2.getDate() + _stepDaysFor * 2);
+
+      stepDay3.setDate(stepDay3.getDate() + _stepDaysFor * 3);
+      $('#stepDay1').text("\uFF11 / \uFF13 step : ".concat(_stepDay.getFullYear(), " / ").concat(_stepDay.getMonth() + 1, " / ").concat(_stepDay.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay2').text("\uFF12 / \uFF13 step : ".concat(_stepDay2.getFullYear(), " / ").concat(_stepDay2.getMonth() + 1, " / ").concat(_stepDay2.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay3').text("\uFF13 / \uFF13 step : ".concat(stepDay3.getFullYear(), " / ").concat(stepDay3.getMonth() + 1, " / ").concat(stepDay3.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay4').text("");
+      $('#stepDay5').text("");
+      $('#stepDay6').text("");
+      $('#stepDay7').text("");
+      $('#stepDay8').text("");
+      $('#stepDay9').text("");
+      $('#stepDay10').text("");
+    } else if (howManySteps === "4") {
+      var _stepDaysFor2 = Math.floor(daysLeft / 4);
+
+      var _stepDay3 = new Date();
+
+      var _stepDay4 = new Date();
+
+      var _stepDay5 = new Date();
+
+      var stepDay4 = new Date();
+
+      _stepDay3.setDate(_stepDay3.getDate() + _stepDaysFor2);
+
+      _stepDay4.setDate(_stepDay4.getDate() + _stepDaysFor2 * 2);
+
+      _stepDay5.setDate(_stepDay5.getDate() + _stepDaysFor2 * 3);
+
+      stepDay4.setDate(stepDay4.getDate() + _stepDaysFor2 * 4);
+      $('#stepDay1').text("\uFF11 / \uFF14 step : ".concat(_stepDay3.getFullYear(), " / ").concat(_stepDay3.getMonth() + 1, " / ").concat(_stepDay3.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay2').text("\uFF12 / \uFF14 step : ".concat(_stepDay4.getFullYear(), " / ").concat(_stepDay4.getMonth() + 1, " / ").concat(_stepDay4.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay3').text("\uFF13 / \uFF14 step : ".concat(_stepDay5.getFullYear(), " / ").concat(_stepDay5.getMonth() + 1, " / ").concat(_stepDay5.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay4').text("\uFF14 / \uFF14 step : ".concat(stepDay4.getFullYear(), " / ").concat(stepDay4.getMonth() + 1, " / ").concat(stepDay4.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay5').text("");
+      $('#stepDay6').text("");
+      $('#stepDay7').text("");
+      $('#stepDay8').text("");
+      $('#stepDay9').text("");
+      $('#stepDay10').text("");
+    } else if (howManySteps === "5") {
+      var _stepDaysFor3 = Math.floor(daysLeft / 5);
+
+      var _stepDay6 = new Date();
+
+      var _stepDay7 = new Date();
+
+      var _stepDay8 = new Date();
+
+      var _stepDay9 = new Date();
+
+      var stepDay5 = new Date();
+
+      _stepDay6.setDate(_stepDay6.getDate() + _stepDaysFor3);
+
+      _stepDay7.setDate(_stepDay7.getDate() + _stepDaysFor3 * 2);
+
+      _stepDay8.setDate(_stepDay8.getDate() + _stepDaysFor3 * 3);
+
+      _stepDay9.setDate(_stepDay9.getDate() + _stepDaysFor3 * 4);
+
+      stepDay5.setDate(stepDay5.getDate() + _stepDaysFor3 * 5);
+      $('#stepDay1').text("\uFF11 / \uFF15 step : ".concat(_stepDay6.getFullYear(), " / ").concat(_stepDay6.getMonth() + 1, " / ").concat(_stepDay6.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay2').text("\uFF12 / \uFF15 step : ".concat(_stepDay7.getFullYear(), " / ").concat(_stepDay7.getMonth() + 1, " / ").concat(_stepDay7.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay3').text("\uFF13 / \uFF15 step : ".concat(_stepDay8.getFullYear(), " / ").concat(_stepDay8.getMonth() + 1, " / ").concat(_stepDay8.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay4').text("\uFF14 / \uFF15 step : ".concat(_stepDay9.getFullYear(), " / ").concat(_stepDay9.getMonth() + 1, " / ").concat(_stepDay9.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay5').text("\uFF15 / \uFF15 step : ".concat(stepDay5.getFullYear(), " / ").concat(stepDay5.getMonth() + 1, " / ").concat(stepDay5.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay6').text("");
+      $('#stepDay7').text("");
+      $('#stepDay8').text("");
+      $('#stepDay9').text("");
+      $('#stepDay10').text("");
+    } else if (howManySteps === "6") {
+      var _stepDaysFor4 = Math.floor(daysLeft / 6);
+
+      var _stepDay10 = new Date();
+
+      var _stepDay11 = new Date();
+
+      var _stepDay12 = new Date();
+
+      var _stepDay13 = new Date();
+
+      var _stepDay14 = new Date();
+
+      var stepDay6 = new Date();
+
+      _stepDay10.setDate(_stepDay10.getDate() + _stepDaysFor4);
+
+      _stepDay11.setDate(_stepDay11.getDate() + _stepDaysFor4 * 2);
+
+      _stepDay12.setDate(_stepDay12.getDate() + _stepDaysFor4 * 3);
+
+      _stepDay13.setDate(_stepDay13.getDate() + _stepDaysFor4 * 4);
+
+      _stepDay14.setDate(_stepDay14.getDate() + _stepDaysFor4 * 5);
+
+      stepDay6.setDate(stepDay6.getDate() + _stepDaysFor4 * 6);
+      $('#stepDay1').text("\uFF11 / \uFF16 step : ".concat(_stepDay10.getFullYear(), " / ").concat(_stepDay10.getMonth() + 1, " / ").concat(_stepDay10.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay2').text("\uFF12 / \uFF16 step : ".concat(_stepDay11.getFullYear(), " / ").concat(_stepDay11.getMonth() + 1, " / ").concat(_stepDay11.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay3').text("\uFF13 / \uFF16 step : ".concat(_stepDay12.getFullYear(), " / ").concat(_stepDay12.getMonth() + 1, " / ").concat(_stepDay12.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay4').text("\uFF14 / \uFF16 step : ".concat(_stepDay13.getFullYear(), " / ").concat(_stepDay13.getMonth() + 1, " / ").concat(_stepDay13.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay5').text("\uFF15 / \uFF16 step : ".concat(_stepDay14.getFullYear(), " / ").concat(_stepDay14.getMonth() + 1, " / ").concat(_stepDay14.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay6').text("\uFF16 / \uFF16 step : ".concat(stepDay6.getFullYear(), " / ").concat(stepDay6.getMonth() + 1, " / ").concat(stepDay6.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay7').text("");
+      $('#stepDay8').text("");
+      $('#stepDay9').text("");
+      $('#stepDay10').text("");
+    } else if (howManySteps === "7") {
+      var _stepDaysFor5 = Math.floor(daysLeft / 7);
+
+      var _stepDay15 = new Date();
+
+      var _stepDay16 = new Date();
+
+      var _stepDay17 = new Date();
+
+      var _stepDay18 = new Date();
+
+      var _stepDay19 = new Date();
+
+      var _stepDay20 = new Date();
+
+      var stepDay7 = new Date();
+
+      _stepDay15.setDate(_stepDay15.getDate() + _stepDaysFor5);
+
+      _stepDay16.setDate(_stepDay16.getDate() + _stepDaysFor5 * 2);
+
+      _stepDay17.setDate(_stepDay17.getDate() + _stepDaysFor5 * 3);
+
+      _stepDay18.setDate(_stepDay18.getDate() + _stepDaysFor5 * 4);
+
+      _stepDay19.setDate(_stepDay19.getDate() + _stepDaysFor5 * 5);
+
+      _stepDay20.setDate(_stepDay20.getDate() + _stepDaysFor5 * 6);
+
+      stepDay7.setDate(stepDay7.getDate() + _stepDaysFor5 * 7);
+      $('#stepDay1').text("\uFF11 / \uFF17 step : ".concat(_stepDay15.getFullYear(), " / ").concat(_stepDay15.getMonth() + 1, " / ").concat(_stepDay15.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay2').text("\uFF12 / \uFF17 step : ".concat(_stepDay16.getFullYear(), " / ").concat(_stepDay16.getMonth() + 1, " / ").concat(_stepDay16.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay3').text("\uFF13 / \uFF17 step : ".concat(_stepDay17.getFullYear(), " / ").concat(_stepDay17.getMonth() + 1, " / ").concat(_stepDay17.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay4').text("\uFF14 / \uFF17 step : ".concat(_stepDay18.getFullYear(), " / ").concat(_stepDay18.getMonth() + 1, " / ").concat(_stepDay18.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay5').text("\uFF15 / \uFF17 step : ".concat(_stepDay19.getFullYear(), " / ").concat(_stepDay19.getMonth() + 1, " / ").concat(_stepDay19.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay6').text("\uFF16 / \uFF17 step : ".concat(_stepDay20.getFullYear(), " / ").concat(_stepDay20.getMonth() + 1, " / ").concat(_stepDay20.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay7').text("\uFF17 / \uFF17 step : ".concat(stepDay7.getFullYear(), " / ").concat(stepDay7.getMonth() + 1, " / ").concat(stepDay7.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay8').text("");
+      $('#stepDay9').text("");
+      $('#stepDay10').text("");
+    } else if (howManySteps === "8") {
+      var _stepDaysFor6 = Math.floor(daysLeft / 8);
+
+      var _stepDay21 = new Date();
+
+      var _stepDay22 = new Date();
+
+      var _stepDay23 = new Date();
+
+      var _stepDay24 = new Date();
+
+      var _stepDay25 = new Date();
+
+      var _stepDay26 = new Date();
+
+      var _stepDay27 = new Date();
+
+      var stepDay8 = new Date();
+
+      _stepDay21.setDate(_stepDay21.getDate() + _stepDaysFor6);
+
+      _stepDay22.setDate(_stepDay22.getDate() + _stepDaysFor6 * 2);
+
+      _stepDay23.setDate(_stepDay23.getDate() + _stepDaysFor6 * 3);
+
+      _stepDay24.setDate(_stepDay24.getDate() + _stepDaysFor6 * 4);
+
+      _stepDay25.setDate(_stepDay25.getDate() + _stepDaysFor6 * 5);
+
+      _stepDay26.setDate(_stepDay26.getDate() + _stepDaysFor6 * 6);
+
+      _stepDay27.setDate(_stepDay27.getDate() + _stepDaysFor6 * 7);
+
+      stepDay8.setDate(stepDay8.getDate() + _stepDaysFor6 * 8);
+      $('#stepDay1').text("\uFF11 / \uFF18 step : ".concat(_stepDay21.getFullYear(), " / ").concat(_stepDay21.getMonth() + 1, " / ").concat(_stepDay21.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay2').text("\uFF12 / \uFF18 step : ".concat(_stepDay22.getFullYear(), " / ").concat(_stepDay22.getMonth() + 1, " / ").concat(_stepDay22.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay3').text("\uFF13 / \uFF18 step : ".concat(_stepDay23.getFullYear(), " / ").concat(_stepDay23.getMonth() + 1, " / ").concat(_stepDay23.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay4').text("\uFF14 / \uFF18 step : ".concat(_stepDay24.getFullYear(), " / ").concat(_stepDay24.getMonth() + 1, " / ").concat(_stepDay24.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay5').text("\uFF15 / \uFF18 step : ".concat(_stepDay25.getFullYear(), " / ").concat(_stepDay25.getMonth() + 1, " / ").concat(_stepDay25.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay6').text("\uFF16 / \uFF18 step : ".concat(_stepDay26.getFullYear(), " / ").concat(_stepDay26.getMonth() + 1, " / ").concat(_stepDay26.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay7').text("\uFF17 / \uFF18 step : ".concat(_stepDay27.getFullYear(), " / ").concat(_stepDay27.getMonth() + 1, " / ").concat(_stepDay27.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay8').text("\uFF18 / \uFF18 step : ".concat(stepDay8.getFullYear(), " / ").concat(stepDay8.getMonth() + 1, " / ").concat(stepDay8.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay9').text("");
+      $('#stepDay10').text("");
+    } else if (howManySteps === "9") {
+      var _stepDaysFor7 = Math.floor(daysLeft / 9);
+
+      var _stepDay28 = new Date();
+
+      var _stepDay29 = new Date();
+
+      var _stepDay30 = new Date();
+
+      var _stepDay31 = new Date();
+
+      var _stepDay32 = new Date();
+
+      var _stepDay33 = new Date();
+
+      var _stepDay34 = new Date();
+
+      var _stepDay35 = new Date();
+
+      var stepDay9 = new Date();
+
+      _stepDay28.setDate(_stepDay28.getDate() + _stepDaysFor7);
+
+      _stepDay29.setDate(_stepDay29.getDate() + _stepDaysFor7 * 2);
+
+      _stepDay30.setDate(_stepDay30.getDate() + _stepDaysFor7 * 3);
+
+      _stepDay31.setDate(_stepDay31.getDate() + _stepDaysFor7 * 4);
+
+      _stepDay32.setDate(_stepDay32.getDate() + _stepDaysFor7 * 5);
+
+      _stepDay33.setDate(_stepDay33.getDate() + _stepDaysFor7 * 6);
+
+      _stepDay34.setDate(_stepDay34.getDate() + _stepDaysFor7 * 7);
+
+      _stepDay35.setDate(_stepDay35.getDate() + _stepDaysFor7 * 8);
+
+      stepDay9.setDate(stepDay9.getDate() + _stepDaysFor7 * 9);
+      $('#stepDay1').text("\uFF11 / \uFF19 step : ".concat(_stepDay28.getFullYear(), " / ").concat(_stepDay28.getMonth() + 1, " / ").concat(_stepDay28.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay2').text("\uFF12 / \uFF19 step : ".concat(_stepDay29.getFullYear(), " / ").concat(_stepDay29.getMonth() + 1, " / ").concat(_stepDay29.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay3').text("\uFF13 / \uFF19 step : ".concat(_stepDay30.getFullYear(), " / ").concat(_stepDay30.getMonth() + 1, " / ").concat(_stepDay30.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay4').text("\uFF14 / \uFF19 step : ".concat(_stepDay31.getFullYear(), " / ").concat(_stepDay31.getMonth() + 1, " / ").concat(_stepDay31.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay5').text("\uFF15 / \uFF19 step : ".concat(_stepDay32.getFullYear(), " / ").concat(_stepDay32.getMonth() + 1, " / ").concat(_stepDay32.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay6').text("\uFF16 / \uFF19 step : ".concat(_stepDay33.getFullYear(), " / ").concat(_stepDay33.getMonth() + 1, " / ").concat(_stepDay33.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay7').text("\uFF17 / \uFF19 step : ".concat(_stepDay34.getFullYear(), " / ").concat(_stepDay34.getMonth() + 1, " / ").concat(_stepDay34.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay8').text("\uFF18 / \uFF19 step : ".concat(_stepDay35.getFullYear(), " / ").concat(_stepDay35.getMonth() + 1, " / ").concat(_stepDay35.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay9').text("\uFF19 / \uFF19 step : ".concat(stepDay9.getFullYear(), " / ").concat(stepDay9.getMonth() + 1, " / ").concat(stepDay9.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay10').text("");
+    } else if (howManySteps === "10") {
+      var _stepDaysFor8 = Math.floor(daysLeft / 10);
+
+      var _stepDay36 = new Date();
+
+      var _stepDay37 = new Date();
+
+      var _stepDay38 = new Date();
+
+      var _stepDay39 = new Date();
+
+      var _stepDay40 = new Date();
+
+      var _stepDay41 = new Date();
+
+      var _stepDay42 = new Date();
+
+      var _stepDay43 = new Date();
+
+      var _stepDay44 = new Date();
+
+      var stepDay10 = new Date();
+
+      _stepDay36.setDate(_stepDay36.getDate() + _stepDaysFor8);
+
+      _stepDay37.setDate(_stepDay37.getDate() + _stepDaysFor8 * 2);
+
+      _stepDay38.setDate(_stepDay38.getDate() + _stepDaysFor8 * 3);
+
+      _stepDay39.setDate(_stepDay39.getDate() + _stepDaysFor8 * 4);
+
+      _stepDay40.setDate(_stepDay40.getDate() + _stepDaysFor8 * 5);
+
+      _stepDay41.setDate(_stepDay41.getDate() + _stepDaysFor8 * 6);
+
+      _stepDay42.setDate(_stepDay42.getDate() + _stepDaysFor8 * 7);
+
+      _stepDay43.setDate(_stepDay43.getDate() + _stepDaysFor8 * 8);
+
+      _stepDay44.setDate(_stepDay44.getDate() + _stepDaysFor8 * 9);
+
+      stepDay10.setDate(stepDay10.getDate() + _stepDaysFor8 * 10);
+      $('#stepDay1').text("\uFF11 / \uFF11\uFF10 step : ".concat(_stepDay36.getFullYear(), " / ").concat(_stepDay36.getMonth() + 1, " / ").concat(_stepDay36.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay2').text("\uFF12 / \uFF11\uFF10 step : ".concat(_stepDay37.getFullYear(), " / ").concat(_stepDay37.getMonth() + 1, " / ").concat(_stepDay37.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay3').text("\uFF13 / \uFF11\uFF10 step : ".concat(_stepDay38.getFullYear(), " / ").concat(_stepDay38.getMonth() + 1, " / ").concat(_stepDay38.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay4').text("\uFF14 / \uFF11\uFF10 step : ".concat(_stepDay39.getFullYear(), " / ").concat(_stepDay39.getMonth() + 1, " / ").concat(_stepDay39.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay5').text("\uFF15 / \uFF11\uFF10 step : ".concat(_stepDay40.getFullYear(), " / ").concat(_stepDay40.getMonth() + 1, " / ").concat(_stepDay40.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay6').text("\uFF16 / \uFF11\uFF10 step : ".concat(_stepDay41.getFullYear(), " / ").concat(_stepDay41.getMonth() + 1, " / ").concat(_stepDay41.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay7').text("\uFF17 / \uFF11\uFF10 step : ".concat(_stepDay42.getFullYear(), " / ").concat(_stepDay42.getMonth() + 1, " / ").concat(_stepDay42.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay8').text("\uFF18 / \uFF11\uFF10 step : ".concat(_stepDay43.getFullYear(), " / ").concat(_stepDay43.getMonth() + 1, " / ").concat(_stepDay43.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay9').text("\uFF19 / \uFF11\uFF10 step : ".concat(_stepDay44.getFullYear(), " / ").concat(_stepDay44.getMonth() + 1, " / ").concat(_stepDay44.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+      $('#stepDay10').text("\uFF11\uFF10 / \uFF11\uFF10 step : ".concat(stepDay10.getFullYear(), " / ").concat(stepDay10.getMonth() + 1, " / ").concat(stepDay10.getDate(), " \u307E\u3067\u306E\u76EE\u6A19"));
+    }
+  }
+
+  function resetStepDays() {
+    $('#stepDay1').text("");
+    $('#stepDay2').text("");
+    $('#stepDay3').text("");
+    $('#stepDay4').text("");
+    $('#stepDay5').text("");
+    $('#stepDay6').text("");
+    $('#stepDay7').text("");
+    $('#stepDay8').text("");
+    $('#stepDay9').text("");
+    $('#stepDay10').text("");
+  }
+
+  function checkError(form) {
+    if (form === "what") {
+      var inputWhat = $("#inputWhat").val();
+
+      if (inputWhat === "") {
+        $('#errorWhat').text("※目標が未入力です");
+        $('#confirmWhat').text("");
+      } else {
+        $('#errorWhat').text("");
+        $('#confirmWhat').text(inputWhat);
+      }
+    } else if (form === "when") {
+      if (isNaN(daysLeft)) {
+        $('#errorWhen').text("※有効な日付が選択されていません");
+        $('#confirmWhen').text("");
+      } else if (daysLeft > 0) {
+        $('#errorWhen').text("");
+        $('#confirmWhen').text("".concat(whenY, " / ").concat(whenM, " / ").concat(whenD, " \uFF08").concat(daysLeft, " \u65E5\u5F8C\uFF09"));
+      } else {
+        $('#errorWhen').text("※有効な日付が選択されていません");
+        $('#confirmWhen').text("");
+      }
+    } else if (form === "why1") {
+      checkWhyBlank();
+
+      if (inputWhy1 === "") {
+        $('#confirmWhy1').text("");
+      } else {
+        $('#confirmWhy1').text("\u30FB".concat(inputWhy1));
+      }
+    } else if (form === "why2") {
+      checkWhyBlank();
+
+      if (inputWhy2 === "") {
+        $('#confirmWhy2').text("");
+      } else {
+        $('#confirmWhy2').text("\u30FB".concat(inputWhy2));
+      }
+    } else if (form === "why3") {
+      checkWhyBlank();
+
+      if (inputWhy3 === "") {
+        $('#confirmWhy3').text("");
+      } else {
+        $('#confirmWhy3').text("\u30FB".concat(inputWhy3));
+      }
+    } else if (form === "why4") {
+      checkWhyBlank();
+
+      if (inputWhy4 === "") {
+        $('#confirmWhy4').text("");
+      } else {
+        $('#confirmWhy4').text("\u30FB".concat(inputWhy4));
+      }
+    } else if (form === "why5") {
+      checkWhyBlank();
+
+      if (inputWhy5 === "") {
+        $('#confirmWhy5').text("");
+      } else {
+        $('#confirmWhy5').text("\u30FB".concat(inputWhy5));
+      }
+    } else if (form === "step1") {
+      checkStepBlank();
+
+      if (inputStep1 === "") {
+        $('#confirmStep1').text("");
+      } else {
+        $('#confirmStep1').text("\u30FB".concat(inputStep1));
+      }
+    } else if (form === "step2") {
+      checkStepBlank();
+
+      if (inputStep2 === "") {
+        $('#confirmStep2').text("");
+      } else {
+        $('#confirmStep2').text("\u30FB".concat(inputStep2));
+      }
+    } else if (form === "step3") {
+      checkStepBlank();
+
+      if (inputStep3 === "") {
+        $('#confirmStep3').text("");
+      } else {
+        $('#confirmStep3').text("\u30FB".concat(inputStep3));
+      }
+    } else if (form === "step4") {
+      checkStepBlank();
+
+      if (inputStep4 === "") {
+        $('#confirmStep4').text("");
+      } else {
+        $('#confirmStep4').text("\u30FB".concat(inputStep4));
+      }
+    } else if (form === "step5") {
+      checkStepBlank();
+
+      if (inputStep5 === "") {
+        $('#confirmStep5').text("");
+      } else {
+        $('#confirmStep5').text("\u30FB".concat(inputStep5));
+      }
+    } else if (form === "step6") {
+      checkStepBlank();
+
+      if (inputStep6 === "") {
+        $('#confirmStep6').text("");
+      } else {
+        $('#confirmStep6').text("\u30FB".concat(inputStep6));
+      }
+    } else if (form === "step7") {
+      checkStepBlank();
+
+      if (inputStep7 === "") {
+        $('#confirmStep7').text("");
+      } else {
+        $('#confirmStep7').text("\u30FB".concat(inputStep7));
+      }
+    } else if (form === "step8") {
+      checkStepBlank();
+
+      if (inputStep8 === "") {
+        $('#confirmStep8').text("");
+      } else {
+        $('#confirmStep8').text("\u30FB".concat(inputStep8));
+      }
+    } else if (form === "step9") {
+      checkStepBlank();
+
+      if (inputStep9 === "") {
+        $('#confirmStep9').text("");
+      } else {
+        $('#confirmStep9').text("\u30FB".concat(inputStep9));
+      }
+    } else if (form === "step10") {
+      checkStepBlank();
+
+      if (inputStep10 === "") {
+        $('#confirmStep10').text("");
+      } else {
+        $('#confirmStep10').text("\u30FB".concat(inputStep10));
+      }
+    }
+  } // 理由の入力欄が全て未入力ではないかチェック
+
+
+  function checkWhyBlank() {
+    if (inputWhy1 === "" && inputWhy2 === "" && inputWhy3 === "" && inputWhy4 === "" && inputWhy5 === "") {
+      $('#errorWhy').text("※理由が未入力です");
+    } else {
+      $('#errorWhy').text("");
+    }
+  } // ステップの入力欄が全て未入力ではないかチェック
+
+
+  function checkStepBlank() {
+    if (inputStep1 === "" && inputStep2 === "" && inputStep3 === "" && inputStep4 === "" && inputStep5 === "" && inputStep6 === "" && inputStep7 === "" && inputStep8 === "" && inputStep9 === "" && inputStep10 === "") {
+      $('#errorStep').text("※ステップが未入力です");
+    } else {
+      $('#errorStep').text("");
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/header.js":
+/*!********************************!*\
+  !*** ./resources/js/header.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  var header = $('#header');
+  header_offset = header.offset();
+  header_height = header.height();
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > header_offset.top + header_height) {
+      header.addClass('header-scroll');
+    } else {
+      header.removeClass('header-scroll');
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/pull-down.js":
+/*!***********************************!*\
+  !*** ./resources/js/pull-down.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $(function () {
+    $('.dropdwn li').hover(function () {
+      $("ul:not(:animated)", this).slideDown();
+    }, function () {
+      $("ul.dropdwn_menu", this).slideUp();
+    });
+  });
+});
 
 /***/ }),
 

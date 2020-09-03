@@ -5,6 +5,10 @@
  */
 
 require('./bootstrap');
+require('./display-each-form');
+require('./display-form-details');
+require('./header');
+require('./pull-down');
 
 window.Vue = require('vue');
 
