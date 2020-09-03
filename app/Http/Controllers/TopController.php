@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class TopController extends Controller
 {
@@ -17,10 +18,11 @@ class TopController extends Controller
             if(count($goals) != 0){
 
                 return view('goal.index', compact('goals'));
-                
+
             }else{
                 
-                return view('goal.create');
+                $today = Carbon::now()->format('Y-m-d');
+                return view('goal.create', compact('today'));
             }
             
 
