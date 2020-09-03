@@ -3,6 +3,9 @@
 @section('title', 'Lozicalize Goals/ 目標詳細')
 
 @section('script')
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
     
 @endsection
 
@@ -21,23 +24,8 @@
     </div>
     
     <div class="small-container small-container__show">
-
-      <div class="by-when-container" >
-        <div>
-          <h5 class="middle-title">Start</h5>
-          <h5 style="margin-bottom: 5px;">{{ $goal->created_at->format('Y / m / d') }}</h5>
-        </div>
-      <div>
-        <h5 class="middle-title">Today</h5>
-        <h5 style="margin-bottom: 10px;">{{ $today->format('Y / m / d') }}</h5>
-      </div>
-
-      </div>
-
       <h3 class="middle-title">By when</h3>
-      <h3 style="margin-bottom: 5px;">{{ $goal->when->format('Y / m / d') }}</h3>
-      <h4>残り {{ $leftDay }} 日</h4>
-
+      <h3>{{ $goal->when->format('Y / m / d') }}</h3>
     </div>
 
     <div class="small-container small-container__show">
@@ -91,16 +79,64 @@
 
   <div class="right-container">
 
-    <div class="how-much-container small-container">
-        <div>
-          <div class="how-much-number">{{ $goal->how_important }}</div>
-          <h4>重要度</h4>
-        </div>
+    <div class="chart-wrapper small-container">
+      <canvas id="important-chart">
+        <script>
+            var w = $('.chart-wrapper').width();
+            var h = $('.chart-wrapper').height();
+            $('#important-chart').attr('width', w);
+            $('#important-chart').attr('height', h);
 
-        <div>
-          <div class="how-much-number">{{ $goal->how_urgent }}</div>
-          <h4>緊急度</h4>
-        </div>
+            const importance = @json($goal->how_important);
+            const urgency = @json($goal->how_urgent);
+
+            var ctx = document.getElementById("important-chart");
+            var myBar = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['重要度','緊急度'],
+                    datasets: [{
+                        data: [importance, urgency],
+                        backgroundColor: ['#9c2020b0', '#9c2020b0']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false
+                  },
+                    title: {
+                        display: false,
+                    },
+                    scales: {
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                              display: false,
+                            },
+                            ticks: {
+                                min: 0,
+                                max: 10,
+                                fontSize: 12,
+                                stepSize: 1
+                            },
+                        }],
+                        xAxes: [{
+                            display: true,
+                            barPercentage: 1,
+                            categoryPercentage: 0.3,
+                            scaleLabel: {
+                              display: false,
+                            },
+                            ticks: {
+                                fontSize: 12
+                            },
+                        }],
+                    },
+                }
+            });
+        </script>
+      </canvas>
     </div>
 
     <div class="small-container small-container__show">
