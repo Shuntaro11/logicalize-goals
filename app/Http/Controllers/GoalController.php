@@ -67,6 +67,7 @@ class GoalController extends Controller
             $reasons = $goal->reasons()->get();
 
             $howManySteps = count($steps);
+            $howManyReasons = count($reasons);
             
             $startDay = new Carbon($goal->create_at);
             $finishDay = new Carbon($goal->when);

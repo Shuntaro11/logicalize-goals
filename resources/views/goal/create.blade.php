@@ -218,7 +218,7 @@
                     <h5 id="errorWhat" class="each-error">※目標が未入力です</h5>
                     <h5 id="errorWhy" class="each-error">※理由が未入力です</h5>
                     <h5 id="errorWhen" class="each-error">※期日が選択されていません</h5>
-                    <h5 id="errorStep" class="each-error">※ステップ１が未入力です</h5>
+                    <h5 id="errorStep" class="each-error">※ステップが未入力です</h5>
                 </div>
 
                 <h4>＜目標＞</h4>

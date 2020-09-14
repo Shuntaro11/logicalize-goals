@@ -1,6 +1,6 @@
 <div id="header" class="header">
 
-    <a class="nav-link" href="/goals">{{Auth::user()->name}}</a>
+    <a class="nav-link" href="/goals"><i class="fas fa-briefcase"></i> {{Auth::user()->name}}</a>
     <a class="nav-link" href="{{ route('logout') }}"
         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">

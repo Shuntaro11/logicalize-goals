@@ -11,7 +11,7 @@
     <button class="btn add-goal-btn" type="button">Add new goal</button>
   </a>
 
-  <h4 >List of your goals</h4>
+  <h4>List of your goals</h4>
 
   <ul class="dropdwn">
       <li>並び替え <i class="fas fa-sort-down"></i>
