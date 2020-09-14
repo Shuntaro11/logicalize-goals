@@ -16,7 +16,6 @@ class CreateReasonsTable extends Migration
         Schema::create('reasons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('reason');
-            $table->integer('achievement')->default(0);
             $table->bigInteger('goal_id')->unsigned()->index();
             $table->timestamps();
             $table->foreign('goal_id')->references('id')->on('goals')->onDelete('cascade');
