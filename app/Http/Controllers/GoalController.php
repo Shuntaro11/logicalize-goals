@@ -75,27 +75,35 @@ class GoalController extends Controller
             // スタートから達成までの日数
             $totalDay = $startDay->diffInDays($finishDay);
 
-            // １ステップ分の日数
-            $oneStepDay = floor($totalDay / $howManySteps);
-
-            // ステップごとの日付を配列に代入
             $stepDays = [];
-            for($i = 0; $i < $howManySteps; $i++){
-                $stepDate = $startDay->addDays($oneStepDay);
-                $stepDay = $stepDate->format('Y / m / d');   //←ここで変換しないでCarbonのままだと予期しない動きになる
-                array_push($stepDays, $stepDay);
-            }
-
-            // Vue.jsで各ステップが達成済みか判断するための変数を定義
             $defaultCompleted = [];
-            foreach ($steps as $step) {
 
-                if($step->achievement === 0){
-                    array_push($defaultCompleted, false);
-                } else {
-                    array_push($defaultCompleted, true);
+            // １ステップ分の日数
+            if($howManySteps != 0){
+
+                $oneStepDay = floor($totalDay / $howManySteps);
+
+                // ステップごとの日付を配列に代入
+                for($i = 0; $i < $howManySteps; $i++){
+                    $stepDate = $startDay->addDays($oneStepDay);
+                    $stepDay = $stepDate->format('Y / m / d');   //←ここで変換しないでCarbonのままだと予期しない動きになる
+                    array_push($stepDays, $stepDay);
                 }
+
+                // Vue.jsで各ステップが達成済みか判断するための変数を定義
+                foreach ($steps as $step) {
+
+                    if($step->achievement === 0){
+                        array_push($defaultCompleted, false);
+                    } else {
+                        array_push($defaultCompleted, true);
+                    }
+                }
+
             }
+            
+
+            
 
             $today = new Carbon();
             $leftDay = $today->diffInDays($finishDay);
@@ -219,6 +227,14 @@ class GoalController extends Controller
             return redirect('/');
 
         }
+    }
+
+    public function achievedindex()
+    {
+        $goals = Auth::user()->goals()->where('achievement', 1)->latest()->get();
+
+        return view('goal.achieved-index', compact('goals'));
+        
     }
 
 }
