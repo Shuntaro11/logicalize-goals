@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 'Lozicalize Goals/ welcome')
+@section('title', 'Lozicalize Goals / welcome')
 
 @section('content')
 

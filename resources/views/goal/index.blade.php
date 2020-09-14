@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 'Lozicalize Goals/トップページ')
+@section('title', 'Lozicalize Goals / 目標一覧')
 
 @section('content')
 
@@ -11,7 +11,7 @@
     <button class="btn add-goal-btn" type="button">Add new goal</button>
   </a>
 
-  <h4>List of your goals</h4>
+  <h1>List of your goals</h1>
 
   <ul class="dropdwn">
       <li>並び替え <i class="fas fa-sort-down"></i>

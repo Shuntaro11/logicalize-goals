@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 'Lozicalize Goals/ 目標詳細')
+@section('title', 'Lozicalize Goals / 目標詳細')
 
 @section('script')
     
@@ -43,7 +43,7 @@
     <div class="small-container small-container__show">
       <h3 class="middle-title">How</h3>
       <div class="steps-index">
-        @if($goal->achievement === 01)
+        @if($goal->achievement === 0)
           <div id="app">
             @for($i = 0; $i < $howManySteps; $i++)
               <h4>{{ $stepDays[$i] }}</h4>
