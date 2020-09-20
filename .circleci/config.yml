@@ -1,0 +1,33 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.3-node-browsers
+      - image: circleci/mysql:5.7
+
+    environment:
+      - DB_CONNECTION: circle_testing
+
+    steps:
+      - checkout
+      - run:
+          name: test_setup
+          command: |
+            sudo apt-get update |
+            sudo docker-php-ext-install pdo_mysql
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "composer.json" }}
+            - v1-dependencies-
+      - run:
+          name: Install PHP libraries
+          command: composer install -n --prefer-dist
+
+      - save_cache:
+          paths:
+            - ./vendor
+          key: v1-dependencies-{{ checksum "composer.json" }}
+
+      - run:
+          name: run PHPUnit
+          command: vendor/bin/phpunit
