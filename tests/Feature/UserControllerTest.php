@@ -38,12 +38,12 @@ class UserControllerTest extends TestCase
         
         $user = factory(User::class)->create();
 
-        // 認証されていることを確認
-        $this->assertTrue(Auth::check());
-
         $response = $this
             ->actingAs($user)
             ->get('/goals/index');
+
+        // 認証されていることを確認
+        $this->assertTrue(Auth::check());
 
         // goals.indexに遷移すると「目標一覧」が表示される
         $response->assertStatus(200)
