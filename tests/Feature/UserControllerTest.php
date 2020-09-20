@@ -40,7 +40,7 @@ class UserControllerTest extends TestCase
 
         $response = $this
             ->actingAs($user)
-            ->get('/goals');
+            ->get(route('goals.index'));
 
         // 認証されていることを確認
         $this->assertTrue(Auth::check());
