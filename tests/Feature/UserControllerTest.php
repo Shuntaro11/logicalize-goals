@@ -40,15 +40,15 @@ class UserControllerTest extends TestCase
 
         $response = $this
             ->actingAs($user)
-            ->get(route('goals.index'));
+            ->get(route('goals.create'));
 
         // 認証されていることを確認
         $this->assertTrue(Auth::check());
 
-        // goals.indexに遷移すると「目標一覧」が表示される
+        // goals.createに遷移でき、「目標登録」が表示される
         $response->assertStatus(200)
-            ->assertViewIs('goal.index')
-            ->assertSee('目標一覧');
+            ->assertViewIs('goal.create')
+            ->assertSee('目標登録');
 
     }
 
