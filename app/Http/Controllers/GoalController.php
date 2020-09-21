@@ -136,8 +136,8 @@ class GoalController extends Controller
 
             'what' => ['required', 'string'],
             'when' => ['required'],
-            'how_important' => ['required', 'min:1', 'max:10'],
-            'how_urgent' => ['required', 'min:1', 'max:10'],
+            'how_important' => ['required', 'integer', 'min:1', 'max:10'],
+            'how_urgent' => ['required', 'integer', 'min:1', 'max:10'],
             'why1' => ['nullable', 'string'],
             'why2' => ['nullable', 'string'],
             'why3' => ['nullable', 'string'],

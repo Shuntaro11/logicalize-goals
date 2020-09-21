@@ -17,6 +17,7 @@ URL: http://lozicalizegoals.herokuapp.com/
 - jQuery
 - Docker
 - Heroku
+- CircleCI
 
 
 
