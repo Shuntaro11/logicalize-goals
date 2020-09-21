@@ -73,7 +73,7 @@ class GoalControllerTest extends TestCase
     }
 
 
-    public function test_「how_urgent」が10より大きいとgoalを登録できない()
+    public function test_「how_important」が1より小さいとgoalを登録できない()
     {
         $user = factory(User::class)->create();
         $this->actingAs($user);
@@ -82,13 +82,51 @@ class GoalControllerTest extends TestCase
         $this->post(route('goals.store'), [
             'what' => 'テスト目標４',
             'when' => '2030-01-01',
-            'how_important' => '1',
-            'how_urgent' => '11',
+            'how_important' => '0',
+            'how_urgent' => '1',
             'why1' => 'テスト理由４',
             'step1' => 'テストステップ４',
         ])
             ->assertStatus(302);
         $this->assertDatabaseMissing('goals', ['what' => 'テスト目標４']);
+    }
+
+
+    public function test_「how_urgent」が10より大きいとgoalを登録できない()
+    {
+        $user = factory(User::class)->create();
+        $this->actingAs($user);
+        $this->assertTrue(Auth::check());
+
+        $this->post(route('goals.store'), [
+            'what' => 'テスト目標５',
+            'when' => '2030-01-01',
+            'how_important' => '1',
+            'how_urgent' => '11',
+            'why1' => 'テスト理由５',
+            'step1' => 'テストステップ５',
+        ])
+            ->assertStatus(302);
+        $this->assertDatabaseMissing('goals', ['what' => 'テスト目標５']);
+    }
+
+
+    public function test_「how_urgent」が1より小さいとgoalを登録できない()
+    {
+        $user = factory(User::class)->create();
+        $this->actingAs($user);
+        $this->assertTrue(Auth::check());
+
+        $this->post(route('goals.store'), [
+            'what' => 'テスト目標６',
+            'when' => '2030-01-01',
+            'how_important' => '1',
+            'how_urgent' => '0',
+            'why1' => 'テスト理由６',
+            'step1' => 'テストステップ６',
+        ])
+            ->assertStatus(302);
+        $this->assertDatabaseMissing('goals', ['what' => 'テスト目標６']);
     }
 
 
@@ -102,11 +140,11 @@ class GoalControllerTest extends TestCase
             'when' => '2030-01-01',
             'how_important' => '1',
             'how_urgent' => '1',
-            'why1' => 'テスト理由５',
-            'step1' => 'テストステップ５',
+            'why1' => 'テスト理由７',
+            'step1' => 'テストステップ７',
         ])
             ->assertStatus(302);
-        $this->assertDatabaseMissing('goals', ['what' => 'テスト目標５']);
+        $this->assertDatabaseMissing('goals', ['what' => 'テスト目標７']);
     }
 
 
@@ -117,13 +155,14 @@ class GoalControllerTest extends TestCase
         $this->assertTrue(Auth::check());
 
         $this->post(route('goals.store'), [
-            'what' => 'テスト目標６',
+            'what' => 'テスト目標８',
             'how_important' => '1',
             'how_urgent' => '1',
-            'why1' => 'テスト理由６',
-            'step1' => 'テストステップ６',
+            'why1' => 'テスト理由８',
+            'step1' => 'テストステップ８',
         ])
             ->assertStatus(302);
-        $this->assertDatabaseMissing('goals', ['what' => 'テスト目標６']);
+        $this->assertDatabaseMissing('goals', ['what' => 'テスト目標８']);
     }
+
 }
