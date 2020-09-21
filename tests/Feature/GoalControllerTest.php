@@ -24,10 +24,6 @@ class GoalControllerTest extends TestCase
         $this->actingAs($user);
         $this->assertTrue(Auth::check());
 
-        $condition = factory(Condition::class)->create();
-        $schedule = factory(Schedule::class)->create();
-        $category = factory(Category::class)->create();
-
         $this->post(route('goals.store'), [
             'what' => 'テスト目標１',
             'when' => '2030-01-01',
