@@ -57,6 +57,8 @@ class GoalController extends Controller
         
     }
 
+
+
     public function show(Goal $goal)
     {
         $auth = Auth::user();
@@ -118,6 +120,8 @@ class GoalController extends Controller
         
     }
 
+
+
     public function create()
     {
 
@@ -125,6 +129,8 @@ class GoalController extends Controller
         return view('goal.create', compact('today'));
 
     }
+
+
 
     public function store(Request $request)
     {
@@ -210,6 +216,22 @@ class GoalController extends Controller
         return view('goal.index', compact('goals'));
         
     }
+
+
+
+    public function edit(Item $item)
+    {
+        return view('goal.edit', compact('item', 'categories', 'conditions', 'schedules'));
+    }
+
+
+
+    public function update(Request $request, Item $item)
+    {
+        return redirect('/goals/show/' . $item->id);
+    }
+
+
 
     public function achieve($id)
     {
