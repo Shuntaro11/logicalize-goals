@@ -98,7 +98,9 @@
             
             <h5 class="mgt-2">目標までの小目標の数を選択</h5>
             <select id="howManySteps">
-                <option value="{{ $howManySteps }}">{{ $howManySteps }}</option>
+                @if($howManySteps != 0)
+                    <option value="{{ $howManySteps }}">{{ $howManySteps }}</option>
+                @endif
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -118,6 +120,8 @@
                   <h5 id="stepDay{{ $i + 1 }}" class="small-label"></h5>
                   @if(isset($steps[$i]))
                     <textarea id="inputStep{{ $i + 1 }}" class="create-form-input" name="step{{ $i + 1 }}" rows="3">{!! ($steps[$i]->step) !!}</textarea>
+                  @elseif($i === 0)
+                    <textarea id="inputStep{{ $i + 1 }}" class="create-form-input" name="step{{ $i + 1 }}" rows="3"></textarea>
                   @else
                     <textarea id="inputStep{{ $i + 1 }}" class="create-form-input display-none" name="step{{ $i + 1 }}" rows="3" placeholder="{{ $i + 1 }}個目のステップを入力"></textarea>
                   @endif
