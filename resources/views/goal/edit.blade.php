@@ -121,7 +121,7 @@
                   @if(isset($steps[$i]))
                     <textarea id="inputStep{{ $i + 1 }}" class="create-form-input" name="step{{ $i + 1 }}" rows="3">{!! ($steps[$i]->step) !!}</textarea>
                   @elseif($i === 0)
-                    <textarea id="inputStep{{ $i + 1 }}" class="create-form-input" name="step{{ $i + 1 }}" rows="3"></textarea>
+                    <textarea id="inputStep1" class="create-form-input" name="step1" rows="3" placeholder="1個目のステップを入力"></textarea>
                   @else
                     <textarea id="inputStep{{ $i + 1 }}" class="create-form-input display-none" name="step{{ $i + 1 }}" rows="3" placeholder="{{ $i + 1 }}個目のステップを入力"></textarea>
                   @endif
