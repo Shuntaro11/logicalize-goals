@@ -247,6 +247,10 @@ select{
     margin-bottom: 3px;
   }
 
+  select{
+    background: white;
+  }
+
 }
 
 
