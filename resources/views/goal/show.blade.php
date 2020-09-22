@@ -15,6 +15,10 @@
 
   <div class="left-container">
 
+    <div class="edit-bar">
+      <a class="btn btn__goal-edit" href="{{ route('goals.edit', $goal->id) }}">Edit</a>
+    </div>
+
     <div class="small-container small-container__show">
       <h3 class="middle-title">What</h3>
       <h3>{{ $goal->what }}</h3>

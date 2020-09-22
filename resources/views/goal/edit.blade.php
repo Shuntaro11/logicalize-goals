@@ -115,11 +115,10 @@
 
                 <h5 class="mgt-2">※未入力のステップは反映されません</h5>
                 @for($i = 0; $i < 10; $i++)
+                  <h5 id="stepDay{{ $i + 1 }}" class="small-label"></h5>
                   @if(isset($steps[$i]))
-                    <h5 id="stepDay{{ $i + 1 }}" class="small-label">1 / {{ $i + 1 }} step : {{ $stepDays[$i] }}までの目標</h5>
                     <textarea id="inputStep{{ $i + 1 }}" class="create-form-input" name="step{{ $i + 1 }}" rows="3">{!! ($steps[$i]->step) !!}</textarea>
                   @else
-                    <h5 id="stepDay{{ $i + 1 }}" class="small-label"></h5>
                     <textarea id="inputStep{{ $i + 1 }}" class="create-form-input display-none" name="step{{ $i + 1 }}" rows="3" placeholder="{{ $i + 1 }}個目のステップを入力"></textarea>
                   @endif
                 @endfor
