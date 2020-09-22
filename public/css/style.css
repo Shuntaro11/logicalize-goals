@@ -125,6 +125,10 @@ select{
   margin-top: 20px;
 }
 
+.btn__achievement:hover{
+  background: #4fcf48;
+}
+
 .btn__achieved{
   background: #ffb236;
   margin: 20px auto 0;
@@ -134,13 +138,16 @@ select{
   border-radius: 3px;
 }
 
-.btn__achieved:hover{
-  background: #ffb236;
-  box-shadow: none;
+.btn__goal-edit{
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 80px;
+  background: teal;
 }
 
-.btn__achievement:hover{
-  background: #4fcf48;
+.btn__goal-edit:hover{
+  background: rgb(19, 139, 139);
 }
 
 .form-error{
@@ -195,6 +202,11 @@ select{
   margin-bottom: 5px;
 }
 
+.edit-bar{
+  display: flex;
+  padding: 0 10px;
+}
+
 @media (max-width: 640px) {
 
   body{
@@ -215,6 +227,10 @@ select{
 
   .btn{
     width: 250px;
+  }
+
+  .btn__goal-edit{
+    width: 60px;
   }
 
   .main-container__show{

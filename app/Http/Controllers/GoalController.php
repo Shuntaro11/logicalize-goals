@@ -57,6 +57,8 @@ class GoalController extends Controller
         
     }
 
+
+
     public function show(Goal $goal)
     {
         $auth = Auth::user();
@@ -118,6 +120,8 @@ class GoalController extends Controller
         
     }
 
+
+
     public function create()
     {
 
@@ -125,6 +129,8 @@ class GoalController extends Controller
         return view('goal.create', compact('today'));
 
     }
+
+
 
     public function store(Request $request)
     {
@@ -210,6 +216,126 @@ class GoalController extends Controller
         return view('goal.index', compact('goals'));
         
     }
+
+
+
+    public function edit(Goal $goal)
+    {
+
+        $auth = Auth::user();
+
+        if($goal->user_id === $auth->id && $goal->achievement === 0){
+
+            $steps = $goal->steps()->get();
+            $reasons = $goal->reasons()->get();
+
+            $howManySteps = count($steps);
+
+            $today = new Carbon();
+
+            return view('goal.edit', compact('auth', 'goal', 'reasons', 'howManySteps', 'steps', 'today'));
+
+        }else{
+
+            return redirect('/goals/' . $goal->id);
+
+        }
+
+    }
+
+
+
+    public function update(Request $request, Goal $goal)
+    {
+        $request->how_important = (int)$request->how_important;
+        $request->how_urgent = (int)$request->how_urgent;
+
+        $validator = $request->validate([
+
+            'what' => ['required', 'string'],
+            'when' => ['required'],
+            'how_important' => ['required', 'integer', 'min:1', 'max:10'],
+            'how_urgent' => ['required', 'integer', 'min:1', 'max:10'],
+            'why1' => ['nullable', 'string'],
+            'why2' => ['nullable', 'string'],
+            'why3' => ['nullable', 'string'],
+            'why4' => ['nullable', 'string'],
+            'why5' => ['nullable', 'string'],
+            'step1' => ['nullable', 'string'],
+            'step2' => ['nullable', 'string'],
+            'step3' => ['nullable', 'string'],
+            'step4' => ['nullable', 'string'],
+            'step5' => ['nullable', 'string'],
+            'step6' => ['nullable', 'string'],
+            'step7' => ['nullable', 'string'],
+            'step8' => ['nullable', 'string'],
+            'step9' => ['nullable', 'string'],
+            'step10' => ['nullable', 'string'],
+
+        ]);
+
+        $allReasons = [$request->why1, $request->why2, $request->why3, $request->why4, $request->why5];
+
+        $reasons = [];
+        foreach ($allReasons as $reason) {
+
+            if($reason != ""){
+                array_push($reasons, $reason);
+            }
+        }
+
+        $allSteps = [$request->step1, $request->step2, $request->step3, $request->step4, $request->step5 , $request->step6, $request->step7, $request->step8, $request->step9, $request->step10];
+
+        $steps = [];
+        foreach ($allSteps as $step) {
+
+            if($step != ""){
+                array_push($steps, $step);
+            }
+        }
+    
+        $goal->what = $request->what;
+        $goal->when = $request->when;
+        $goal->how_important = $request->how_important;
+        $goal->how_urgent = $request->how_urgent;
+        
+        $goal->save();
+
+        $oldSteps = $goal->steps;
+        foreach ($oldSteps as $oldStep) {
+            Step::destroy($oldStep->id);
+        }
+
+        $oldReasons = $goal->reasons;
+        foreach ($oldReasons as $oldReason) {
+            Reason::destroy($oldReason->id);
+        }
+
+        foreach ($steps as $s) {
+
+            $step = new Step;
+            $step->step = $s;
+            $step->goal_id = $goal->id;
+
+            $step->save();
+        }
+
+        foreach ($reasons as $r) {
+
+            $reason = new Reason;
+            $reason->reason = $r;
+            $reason->goal_id = $goal->id;
+
+            $reason->save();
+        }
+
+        // 二重送信対策
+        $request->session()->regenerateToken();
+
+        return redirect('/goals/' . $goal->id);
+    }
+
+
 
     public function achieve($id)
     {

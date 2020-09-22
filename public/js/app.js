@@ -50175,7 +50175,13 @@ $(function () {
 
   $('#inputWhen').blur(function (e) {
     howManyDaysLeft();
-  }); // 理由が入力されたら発火
+  }); // 編集ページを読み込んだら発火
+
+  if (document.URL.match(/goals/) || document.URL.match(/edit/)) {
+    howManySteps = $('#howManySteps').val();
+    howManyDaysLeft();
+  } // 理由が入力されたら発火
+
 
   $('#inputWhy1').blur(function (e) {
     inputWhy1 = $("#inputWhy1").val();
