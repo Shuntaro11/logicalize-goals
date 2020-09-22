@@ -219,16 +219,70 @@ class GoalController extends Controller
 
 
 
-    public function edit(Item $item)
+    public function edit(Goal $goal)
     {
-        return view('goal.edit', compact('item', 'categories', 'conditions', 'schedules'));
+
+        $auth = Auth::user();
+
+        if($goal->user_id === $auth->id){
+
+            $steps = $goal->steps()->get();
+            $reasons = $goal->reasons()->get();
+
+            $howManySteps = count($steps);
+            $howManyReasons = count($reasons);
+            
+            $startDay = new Carbon($goal->create_at);
+            $finishDay = new Carbon($goal->when);
+            
+            // スタートから達成までの日数
+            $totalDay = $startDay->diffInDays($finishDay);
+
+            $stepDays = [];
+            $defaultCompleted = [];
+
+            // １ステップ分の日数
+            if($howManySteps != 0){
+
+                $oneStepDay = floor($totalDay / $howManySteps);
+
+                // ステップごとの日付を配列に代入
+                for($i = 0; $i < $howManySteps; $i++){
+                    $stepDate = $startDay->addDays($oneStepDay);
+                    $stepDay = $stepDate->format('Y / m / d');   //←ここで変換しないでCarbonのままだと予期しない動きになる
+                    array_push($stepDays, $stepDay);
+                }
+
+                // Vue.jsで各ステップが達成済みか判断するための変数を定義
+                foreach ($steps as $step) {
+
+                    if($step->achievement === 0){
+                        array_push($defaultCompleted, false);
+                    } else {
+                        array_push($defaultCompleted, true);
+                    }
+                }
+
+            }
+
+            $today = new Carbon();
+            $leftDay = $today->diffInDays($finishDay);
+
+            return view('goal.edit', compact('auth', 'goal', 'reasons', 'howManySteps', 'steps', 'stepDays', 'defaultCompleted', 'today', 'leftDay'));
+
+        }else{
+
+            return redirect('/');
+
+        }
+
     }
 
 
 
-    public function update(Request $request, Item $item)
+    public function update(Request $request, Goal $goal)
     {
-        return redirect('/goals/show/' . $item->id);
+        return redirect('/goals/show/' . $goal->id);
     }
 
 
